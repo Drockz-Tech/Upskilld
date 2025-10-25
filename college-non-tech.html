@@ -161,6 +161,32 @@
         .floating {
             animation: floating 3s ease-in-out infinite;
         }
+
+        /* Mobile menu styles */
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .hamburger-line {
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .hamburger.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
         
         @keyframes floating {
             0% { transform: translateY(0px); }
@@ -188,11 +214,45 @@
                 <a href="#testimonials" class="hover:text-green-400 transition">Success Stories</a>
                 <a href="#pricing" class="hover:text-green-400 transition">Pricing</a>
             </div>
-            <button class="md:hidden text-white">
-                <i class="fas fa-bars text-xl"></i>
+            <button id="mobile-menu-button" class="md:hidden text-white hamburger">
+                <div class="w-6 h-0.5 bg-white mb-1 hamburger-line"></div>
+                <div class="w-6 h-0.5 bg-white mb-1 hamburger-line"></div>
+                <div class="w-6 h-0.5 bg-white hamburger-line"></div>
             </button>
         </div>
     </nav>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed top-0 left-0 w-64 h-full bg-gray-900 z-40 md:hidden">
+        <div class="p-4">
+            <div class="flex items-center justify-between mb-8">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold gradient-text">Upskilld</span>
+                </div>
+                <button id="close-mobile-menu" class="text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-4">
+                <a href="#programs" class="hover:text-green-400 transition">Programs</a>
+                <a href="#curriculum" class="hover:text-green-400 transition">Curriculum</a>
+                <a href="#careers" class="hover:text-green-400 transition">Career Paths</a>
+                <a href="#testimonials" class="hover:text-green-400 transition">Success Stories</a>
+                <a href="#pricing" class="hover:text-green-400 transition">Pricing</a>
+                <div class="pt-4 mt-4 border-t border-gray-700">
+                    <a href="https://wa.me/+917778010753?text=Interested%20for%20my%20Tech%20career!" target="_blank" class="block py-2 bg-green-500 text-white rounded-lg text-center hover:bg-green-600 transition">
+                        <i class="fab fa-whatsapp mr-2"></i> Talk to Mentor
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay for mobile menu -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden md:hidden"></div>
 
     <!-- Hero Section -->
     <section class="container mx-auto px-4 py-16 md:py-24">
@@ -803,6 +863,37 @@
     </footer>
 
     <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenu = document.getElementById('close-mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            mobileMenuOverlay.classList.remove('hidden');
+            mobileMenuButton.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        }
+        
+        function closeMobileMenuFunc() {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.add('hidden');
+            mobileMenuButton.classList.remove('active');
+            document.body.style.overflow = ''; // Enable scrolling again
+        }
+        
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenuFunc);
+        
+        // Close mobile menu when clicking on a link
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenuFunc();
+            });
+        });
         // Track switching
         document.querySelectorAll('.track-tab').forEach(tab => {
             tab.addEventListener('click', function() {
