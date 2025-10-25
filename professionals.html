@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upskilld Professionals - Upgrade Your Skills. Grow Your Career.</title>
+    <meta name="description" content="Advanced upskilling programs for professionals. Master AI, Management, Data Science, and career transition skills with Ed-Sphere.">
+    <meta name="keywords" content="professional upskilling, career transition, AI certification, management course, data science for professionals">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --bg-primary: #0D1117;
+            --bg-secondary: #161B22;
+            --bg-card: #21262D;
+            --text-primary: #F0F6FC;
+            --text-secondary: #8B949E;
+            --accent-indigo: #6366F1;
+            --accent-purple: #8B5CF6;
+            --accent-blue: #3B82F6;
+        }
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-indigo), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--accent-indigo), var(--accent-purple));
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+        }
+        
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        
+        .path-tab {
+            transition: all 0.3s ease;
+        }
+        
+        .path-tab.active {
+            background: var(--bg-card);
+            border-bottom: 3px solid var(--accent-indigo);
+        }
+        
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .growth-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .growth-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+        
+        .mentor-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--accent-indigo);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-opacity-90" style="background-color: rgba(13, 17, 23, 0.9);">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white"></i>
+                    </div>
+                    <span class="text-2xl font-bold gradient-text">Upskilld</span>
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-indigo-400 transition">Home</a>
+                <a href="#paths" class="hover:text-indigo-400 transition">Learning Paths</a>
+                <a href="#programs" class="hover:text-indigo-400 transition">Programs</a>
+                <a href="#outcomes" class="hover:text-indigo-400 transition">Career Outcomes</a>
+                <a href="#pricing" class="hover:text-indigo-400 transition">Pricing</a>
+            </div>
+            <button class="md:hidden text-white">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 py-16 md:py-24">
+        <div class="text-center max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <span class="gradient-text">Upgrade Your Skills. Grow Your Career.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                Advanced upskilling programs designed for working professionals. Learn from industry experts and accelerate your career growth.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a href="https://wa.me/+917778010753?text=Interested%20for%20Career%20Evolution!" target="_blank"><button class="gradient-bg text-white px-8 py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition">
+                    <i class="fas fa-rocket mr-2"></i> Start Your Journey
+                </button></a>
+                <a href="https://wa.me/+917778010753?text=Inquiry%20for%20Career%20Evolution!" target="_blank"><button class="bg-transparent border-2 border-indigo-500 text-indigo-400 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-500 hover:text-white transition">
+                    <i class="fas fa-user-tie mr-2"></i> Talk to Career Advisor
+                </button></a>
+            </div>
+            
+            <!-- Trust Indicators -->
+            <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+                <span class="bg-indigo-900 bg-opacity-30 px-4 py-2 rounded-full">
+                    <i class="fas fa-industry mr-2 text-indigo-400"></i> 500+ Corporate Materials
+                </span>
+                <span class="bg-purple-900 bg-opacity-30 px-4 py-2 rounded-full">
+                    <i class="fas fa-certificate mr-2 text-purple-400"></i> Industry Certifications
+                </span>
+                <span class="bg-blue-900 bg-opacity-30 px-4 py-2 rounded-full">
+                    <i class="fas fa-chart-line mr-2 text-blue-400"></i> 20% Average Salary Hike
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Paths -->
+    <section id="paths" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Choose Your Growth Path</span>
+        </h2>
+        <div class="flex flex-col md:flex-row justify-center mb-8">
+            <button class="path-tab active px-6 py-3 text-center" data-path="tech">Tech Leadership</button>
+            <button class="path-tab px-6 py-3 text-center" data-path="management">Management</button>
+            <button class="path-tab px-6 py-3 text-center" data-path="transition">Career Transition</button>
+            <button class="path-tab px-6 py-3 text-center" data-path="specialization">Specialization</button>
+        </div>
+        
+        <!-- Tech Leadership Content -->
+        <div id="tech" class="path-content">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-indigo-900 to-purple-900 bg-opacity-20 rounded-xl p-6 border border-indigo-800 relative">
+                    <div class="mentor-badge">Trending</div>
+                    <div class="skill-icon bg-indigo-500 bg-opacity-20">
+                        <i class="fas fa-brain text-indigo-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">AI & ML Leadership</h3>
+                    <p class="text-gray-300 mb-4">Lead AI initiatives and drive innovation</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Advanced ML architectures</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> AI strategy & ethics</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Team leadership</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-purple-900 to-indigo-900 bg-opacity-20 rounded-xl p-6 border border-purple-800">
+                    <div class="skill-icon bg-purple-500 bg-opacity-20">
+                        <i class="fas fa-cloud text-purple-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Cloud Architecture</h3>
+                    <p class="text-gray-300 mb-4">Design and lead cloud transformations</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Multi-cloud strategies</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> DevOps leadership</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Cost optimization</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-blue-900 to-indigo-900 bg-opacity-20 rounded-xl p-6 border border-blue-800">
+                    <div class="skill-icon bg-blue-500 bg-opacity-20">
+                        <i class="fas fa-shield-alt text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Cybersecurity Leadership</h3>
+                    <p class="text-gray-300 mb-4">Protect organizations from digital threats</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Security architecture</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Risk management</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Compliance frameworks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Management Content (Hidden) -->
+        <div id="management" class="path-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-emerald-900 to-green-900 bg-opacity-20 rounded-xl p-6 border border-emerald-800">
+                    <div class="skill-icon bg-emerald-500 bg-opacity-20">
+                        <i class="fas fa-users-cog text-emerald-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Product Management</h3>
+                    <p class="text-gray-300 mb-4">Lead product strategy and development</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Product strategy</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Agile methodologies</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Market research</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-green-900 to-emerald-900 bg-opacity-20 rounded-xl p-6 border border-green-800">
+                    <div class="skill-icon bg-green-500 bg-opacity-20">
+                        <i class="fas fa-chart-line text-green-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Business Analytics</h3>
+                    <p class="text-gray-300 mb-4">Drive decisions with data insights</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Advanced analytics</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Business intelligence</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Strategic planning</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-teal-900 to-green-900 bg-opacity-20 rounded-xl p-6 border border-teal-800">
+                    <div class="skill-icon bg-teal-500 bg-opacity-20">
+                        <i class="fas fa-handshake text-teal-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Strategic Leadership</h3>
+                    <p class="text-gray-300 mb-4">Lead teams and drive organizational growth</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Executive leadership</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Change management</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Team building</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Career Transition Content (Hidden) -->
+        <div id="transition" class="path-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-orange-900 to-red-900 bg-opacity-20 rounded-xl p-6 border border-orange-800">
+                    <div class="skill-icon bg-orange-500 bg-opacity-20">
+                        <i class="fas fa-code text-orange-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Non-Tech to Tech</h3>
+                    <p class="text-gray-300 mb-4">Transition into tech roles seamlessly</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Programming fundamentals</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Industry-specific skills</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Portfolio building</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-red-900 to-orange-900 bg-opacity-20 rounded-xl p-6 border border-red-800">
+                    <div class="skill-icon bg-red-500 bg-opacity-20">
+                        <i class="fas fa-briefcase text-red-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Entrepreneurship</h3>
+                    <p class="text-gray-300 mb-4">Build and scale your own venture</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Business modeling</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Funding strategies</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Growth hacking</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-yellow-900 to-orange-900 bg-opacity-20 rounded-xl p-6 border border-yellow-800">
+                    <div class="skill-icon bg-yellow-500 bg-opacity-20">
+                        <i class="fas fa-globe text-yellow-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Consulting</h3>
+                    <p class="text-gray-300 mb-4">Become a trusted industry advisor</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Problem-solving frameworks</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Client management</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Industry expertise</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Specialization Content (Hidden) -->
+        <div id="specialization" class="path-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-cyan-900 to-blue-900 bg-opacity-20 rounded-xl p-6 border border-cyan-800">
+                    <div class="skill-icon bg-cyan-500 bg-opacity-20">
+                        <i class="fas fa-robot text-cyan-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">AI Specialization</h3>
+                    <p class="text-gray-300 mb-4">Deep dive into cutting-edge AI technologies</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Deep learning</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Computer vision</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> NLP applications</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-blue-900 to-cyan-900 bg-opacity-20 rounded-xl p-6 border border-blue-800">
+                    <div class="skill-icon bg-blue-500 bg-opacity-20">
+                        <i class="fas fa-database text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Data Science</h3>
+                    <p class="text-gray-300 mb-4">Master data analysis and modeling</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Statistical analysis</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Machine learning</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Big data technologies</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-indigo-900 to-blue-900 bg-opacity-20 rounded-xl p-6 border border-indigo-800">
+                    <div class="skill-icon bg-indigo-500 bg-opacity-20">
+                        <i class="fas fa-mobile-alt text-indigo-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Full Stack Mastery</h3>
+                    <p class="text-gray-300 mb-4">Become a complete web developer</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Advanced frameworks</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Microservices</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Performance optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Features -->
+    <section id="programs" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Why Professionals Choose Upskilld</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-card rounded-lg p-6 text-center">
+                <div class="w-16 h-16 rounded-full bg-indigo-500 bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-clock text-indigo-400 text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Flexible Learning</h3>
+                <p class="text-gray-400 text-sm">Learn at your own pace with weekend batches and recorded sessions</p>
+            </div>
+            
+            <div class="bg-card rounded-lg p-6 text-center">
+                <div class="w-16 h-16 rounded-full bg-purple-500 bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-user-tie text-purple-400 text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Industry Mentors</h3>
+                <p class="text-gray-400 text-sm">Learn from leaders at top companies with 15+ years experience</p>
+            </div>
+            
+            <div class="bg-card rounded-lg p-6 text-center">
+                <div class="w-16 h-16 rounded-full bg-blue-500 bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-project-diagram text-blue-400 text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Real Projects</h3>
+                <p class="text-gray-400 text-sm">Work on industry-relevant projects that build your portfolio</p>
+            </div>
+            
+            <div class="bg-card rounded-lg p-6 text-center">
+                <div class="w-16 h-16 rounded-full bg-green-500 bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-certificate text-green-400 text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Certifications</h3>
+                <p class="text-gray-400 text-sm">Get recognized certifications from industry partners</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Outcomes -->
+    <section id="outcomes" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Career Transformation</span>
+        </h2>
+        <!-- <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+            <div class="growth-card">
+                <div class="text-4xl font-bold gradient-text mb-2">20%</div>
+                <p class="text-gray-400">Average Salary Hike</p>
+            </div>
+            <div class="growth-card">
+                <div class="text-4xl font-bold gradient-text mb-2">3000+</div>
+                <p class="text-gray-400">Career Transitions</p>
+            </div>
+            <div class="growth-card">
+                <div class="text-4xl font-bold gradient-text mb-2">6 months</div>
+                <p class="text-gray-400">Average Transition Time</p>
+            </div>
+            <div class="growth-card">
+                <div class="text-4xl font-bold gradient-text mb-2">200+</div>
+                <p class="text-gray-400">Hiring Partners</p>
+            </div>
+        </div> -->
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-card rounded-lg p-6">
+                <div class="flex items-start">
+                    <img src="https://picsum.photos/seed/professional1/60/60.jpg" alt="Professional" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold mb-1">Vikram Singh</h4>
+                        <p class="text-sm text-gray-400 mb-2">Senior Manager → Division Head • 20% Salary Hike</p>
+                        <p class="text-gray-300">"Upskilld's AI leadership program helped me transition from a technical role to head within a year."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-card rounded-lg p-6">
+                <div class="flex items-start">
+                    <img src="https://picsum.photos/seed/professional2/60/60.jpg" alt="Professional" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold mb-1">Neha Patel</h4>
+                        <p class="text-sm text-gray-400 mb-2">Marketing → Product Manager • 10% Salary Hike</p>
+                        <p class="text-gray-300">"The career transition program gave me the skills and confidence to switch to product management."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Investment Options</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <!-- <div class="bg-card rounded-xl p-6 border border-gray-700">
+                <h3 class="text-xl font-bold mb-2">Self-Paced</h3>
+                <p class="text-gray-400 mb-4">Learn at your convenience</p>
+                <div class="text-3xl font-bold mb-4">₹24,999<span class="text-sm text-gray-400">/program</span></div>
+                <ul class="space-y-2 mb-6 text-gray-300">
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Full course access</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Recorded sessions</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Community support</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Certificate</li>
+                </ul>
+                <button class="w-full bg-transparent border-2 border-indigo-500 text-indigo-400 py-2 rounded-lg hover:bg-indigo-500 hover:text-white transition">
+                    Enroll Now
+                </button>
+            </div> -->
+            
+            <div class="bg-card rounded-xl p-6 border-2 border-indigo-500 relative mx-auto overflow-hidden">
+    <!-- Discount Badge -->
+    <div class="absolute top-7 right-1 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold z-10 animate-pulse">
+        LIMITED TIME OFFER
+    </div>
+    
+    <div class="absolute -top-1 left-1/2 transform -translate-x-1/2 bg-indigo-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+        RECOMMENDED
+    </div>
+    
+    <h3 class="text-xl font-bold mb-2">Live Online</h3>
+    <p class="text-gray-400 mb-4">Interactive learning with mentors</p>
+    
+    <!-- Pricing with Discount -->
+    <div class="text-center mb-4">
+        <div class="flex items-center justify-center gap-2">
+            <span class="text-2xl text-gray-500 line-through">₹29,999</span>
+            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded">SAVE ₹5,000</span>
+        </div>
+        <div class="text-3xl font-bold gradient-text">₹24,999<span class="text-sm text-gray-400">/program</span></div>
+    </div>
+    
+    <!-- Urgency Message -->
+    <div class="bg-red-900 bg-opacity-20 border border-red-500 rounded-lg p-2 mb-4 text-center">
+        <p class="text-red-400 text-sm font-semibold">
+            <i class="fas fa-clock mr-1"></i> Discount ends in: <span id="discount-timer-live">48:00:00</span>
+        </p>
+    </div>
+    
+    <ul class="space-y-2 mb-6 text-gray-300">
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Full Course Access</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Live weekend classes</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> 1-on-1 mentorship</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Career services</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Alumni network</li>
+    </ul>
+    
+    <a href="https://wa.me/+917778010753?text=Avail%20discount%20for%20Career%20Evolution!" target="_blank"><button class="w-full gradient-bg text-white py-2 rounded-lg hover:opacity-90 transition font-semibold">
+        <i class="fas fa-bolt mr-2"></i> Grab Discount Now
+    </button></a>
+    
+    <!-- Additional Urgency Text -->
+    <p class="text-center text-xs text-gray-400 mt-3">
+        <i class="fas fa-fire text-orange-400 mr-1"></i> Only 10 spots left at this price!
+    </p>
+</div>
+
+<div class="bg-card rounded-xl p-6 border border-gray-700 relative overflow-hidden">
+    <!-- Special Offer Badge -->
+    <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold z-10 animate-pulse">
+        CORPORATE SPECIAL
+    </div>
+    
+    <h3 class="text-xl font-bold mb-2">Corporate</h3>
+    <p class="text-gray-400 mb-4">Team training solutions</p>
+    
+    <!-- Pricing with Value Proposition -->
+    <div class="text-center mb-4">
+        <div class="text-3xl font-bold gradient-text">Custom<span class="text-sm text-gray-400"> pricing</span></div>
+        <div class="text-sm text-green-400 font-semibold">
+            <i class="fas fa-tag mr-1"></i> Up to 30% discount for teams of 5+
+        </div>
+    </div>
+    
+    <!-- Limited Time Offer -->
+    <div class="bg-green-900 bg-opacity-20 border border-green-500 rounded-lg p-2 mb-4 text-center">
+        <p class="text-green-400 text-sm font-semibold">
+            <i class="fas fa-gift mr-1"></i> Free training needs assessment (Limited time)
+        </p>
+    </div>
+    
+    <ul class="space-y-2 mb-6 text-gray-300">
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Custom curriculum</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Dedicated support</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Progress tracking</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> ROI measurement</li>
+    </ul>
+    
+    <a href="https://wa.me/+917778010753?text=Avail%20corporate%20discount%20for%20Career%20Evolution!" target="_blank"><button class="w-full bg-transparent border-2 border-indigo-500 text-indigo-400 py-2 rounded-lg hover:bg-indigo-500 hover:text-white transition font-semibold">
+        <i class="fas fa-phone mr-2"></i> Get Custom Quote
+    </button></a>
+    
+    <!-- Additional Value Proposition -->
+    <p class="text-center text-xs text-gray-400 mt-3">
+        <i class="fas fa-users text-blue-400 mr-1"></i> plenty of companies trained
+    </p>
+</div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="container mx-auto px-4 py-16 section-fade-in">
+        <div class="bg-gradient-to-r from-indigo-900 to-purple-900 rounded-2xl p-8 md:p-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                Ready to Accelerate Your Career?
+            </h2>
+            <p class="text-xl mb-8 text-gray-300">Join plenty of professionals who transformed their careers with Upskilld</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/+917778010753?text=Give%20Career%20Evolution%20Consultation!" target="_blank"><button class="bg-white text-indigo-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
+                    Schedule Career Consultation
+                </button></a>
+                <a href="https://wa.me/+917778010753?text=Give%20Career%20Evolution%20Curriculum!" target="_blank"><button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-indigo-900 transition">
+                    Download Brochure
+                </button></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-card mt-16 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white"></i>
+                        </div>
+                        <span class="text-2xl font-bold gradient-text">Upskilld</span>
+                    </div>
+                    <p class="text-gray-400">Empowering professionals to reach new heights.</p>
+                </div>
+                <div class="mx-auto">
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#paths" class="hover:text-indigo-400 transition">Learning Paths</a></li>
+                        <li><a href="#programs" class="hover:text-indigo-400 transition">Programs</a></li>
+                        <li><a href="#outcomes" class="hover:text-indigo-400 transition">Outcomes</a></li>
+                        <li><a href="#pricing" class="hover:text-indigo-400 transition">Pricing</a></li>
+                    </ul>
+                </div>
+                <!-- <div>
+                    <h4 class="font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-indigo-400 transition">Webinars</a></li>
+                        <li><a href="#" class="hover:text-indigo-400 transition">Whitepapers</a></li>
+                        <li><a href="#" class="hover:text-indigo-400 transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-indigo-400 transition">FAQs</a></li>
+                    </ul>
+                </div> -->
+                <div class="mx-auto">
+                    <h4 class="font-bold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-indigo-900 transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-indigo-900 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-indigo-900 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>© 2025 Upskilld. All rights reserved.</p>
+                <p class="mt-2">Made with ❤️ for professionals everywhere.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Path switching
+        document.querySelectorAll('.path-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.path-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                document.querySelectorAll('.path-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                document.getElementById(this.dataset.path).classList.remove('hidden');
+            });
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.section-fade-in').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

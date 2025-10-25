@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upskilld Kids - Fun Coding & Tech Learning</title>
+    <meta name="description" content="Spark your child's curiosity with our interactive coding games, STEM projects, and creative tech learning. Designed for kids aged 6-16.">
+    <meta name="keywords" content="coding for kids, STEM education, children tech courses, programming for children">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --bg-primary: #0D1117;
+            --bg-secondary: #161B22;
+            --bg-card: #21262D;
+            --text-primary: #F0F6FC;
+            --text-secondary: #8B949E;
+            --accent-yellow: #FCD34D;
+            --accent-orange: #FB923C;
+            --accent-pink: #EC4899;
+            --accent-purple: #A855F7;
+            --accent-blue: #3B82F6;
+            --accent-green: #10B981;
+        }
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-yellow), var(--accent-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--accent-yellow), var(--accent-orange));
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(252, 211, 77, 0.2);
+        }
+        
+        .fun-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+        
+        .age-tab {
+            transition: all 0.3s ease;
+        }
+        
+        .age-tab.active {
+            background: var(--bg-card);
+            border-bottom: 3px solid var(--accent-yellow);
+        }
+        
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .fun-bubble {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .bounce {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .testimonial-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        
+        
+        .pricing-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(252, 211, 77, 0.3);
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid var(--accent-yellow);
+        }
+        
+        .character {
+            width: 120px;
+            height: 120px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Decorative Bubbles -->
+    <div class="fun-bubble w-64 h-64 bg-yellow-500 top-10 left-10 floating"></div>
+    <div class="fun-bubble w-48 h-48 bg-orange-500 bottom-20 right-20 floating" style="animation-delay: 1s;"></div>
+    <div class="fun-bubble w-32 h-32 bg-pink-500 top-1/2 right-1/4 floating" style="animation-delay: 2s;"></div>
+    
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-opacity-90" style="background-color: rgba(13, 17, 23, 0.9);">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white"></i>
+                    </div>
+                    <span class="text-2xl font-bold gradient-text">Upskilld</span>
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#programs" class="hover:text-yellow-400 transition">Programs</a>
+                <a href="#curriculum" class="hover:text-yellow-400 transition">Curriculum</a>
+                <a href="#benefits" class="hover:text-yellow-400 transition">Benefits</a>
+                <a href="#testimonials" class="hover:text-yellow-400 transition">Testimonials</a>
+                <a href="#pricing" class="hover:text-yellow-400 transition">Pricing</a>
+            </div>
+            <button class="md:hidden text-white">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 py-16 md:py-24">
+        <div class="text-center max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <span class="gradient-text">Code, Create & Have Fun!</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                Spark your child's curiosity with our interactive coding games and STEM projects
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a href="https://wa.me//+917778010753?text=Interested%20for%20my%20child!" target="_blank"><button class="gradient-bg text-white px-8 py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition">
+                    <i class="fas fa-rocket mr-2"></i> Start Free Trial
+                </button></a>
+                <a href="https://wa.me//+917778010753?text=Enquiry%20for%20my%20child!" target="_blank"><button class="bg-transparent border-2 border-yellow-500 text-yellow-400 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-500 hover:text-white transition">
+                    <i class="fas fa-play-circle mr-2"></i> Enquire now
+                </button></a>
+            </div>
+            
+            <!-- Character Illustration -->
+            
+            <!-- Trust Indicators -->
+            <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+                <span class="bg-yellow-900 bg-opacity-30 px-4 py-2 rounded-full">
+                    <i class="fas fa-gamepad mr-2 text-yellow-400"></i> 100+ Interactive Games
+                </span>
+                <span class="bg-orange-900 bg-opacity-30 px-4 py-2 rounded-full">
+                    <i class="fas fa-flask mr-2 text-orange-400"></i> 50+ STEM Projects
+                </span>
+                <span class="bg-pink-900 bg-opacity-30 px-4 py-2 rounded-full">
+                    <i class="fas fa-users mr-2 text-pink-400"></i> Live Mentorship
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Age Groups -->
+    <section id="programs" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Programs for Every Age</span>
+        </h2>
+        <div class="flex flex-col md:flex-row justify-center mb-8">
+            <button class="age-tab active px-6 py-3 text-center" data-age="6-9">Ages 6-9</button>
+            <button class="age-tab px-6 py-3 text-center" data-age="10-13">Ages 10-13</button>
+            <button class="age-tab px-6 py-3 text-center" data-age="14-16">Ages 14-16</button>
+        </div>
+        
+        <!-- Ages 6-9 Content -->
+        <div id="6-9" class="age-content">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-yellow-900 to-orange-900 bg-opacity-20 rounded-xl p-6 border border-yellow-800">
+                    <div class="fun-icon bg-yellow-500 bg-opacity-20">
+                        <i class="fas fa-puzzle-piece text-yellow-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Visual Programming</h3>
+                    <p class="text-gray-300 mb-4">Learn coding concepts with colorful blocks</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Block-based coding</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Simple animations</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Interactive stories</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-orange-900 to-pink-900 bg-opacity-20 rounded-xl p-6 border border-orange-800">
+                    <div class="fun-icon bg-orange-500 bg-opacity-20">
+                        <i class="fas fa-robot text-orange-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Logic & Puzzle Lab</h3>
+                    <p class="text-gray-300 mb-4">Train your brain with games and challenge</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Solve fun logic puzzles</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Create simple mazes and patterns</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Build critical and computational thinking</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-pink-900 to-purple-900 bg-opacity-20 rounded-xl p-6 border border-pink-800">
+                    <div class="fun-icon bg-pink-500 bg-opacity-20">
+                        <i class="fas fa-paint-brush text-pink-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Creative Design</h3>
+                    <p class="text-gray-300 mb-4">Express creativity through digital art</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Digital drawing</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Simple animations</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Story creation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Ages 10-13 Content (Hidden) -->
+        <div id="10-13" class="age-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-blue-900 to-cyan-900 bg-opacity-20 rounded-xl p-6 border border-blue-800">
+                    <div class="fun-icon bg-blue-500 bg-opacity-20">
+                        <i class="fas fa-code text-blue-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Introduction to Coding</h3>
+                    <p class="text-gray-300 mb-4">Learn real programming languages</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Python basics</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Simple games</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Problem solving</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-cyan-900 to-green-900 bg-opacity-20 rounded-xl p-6 border border-cyan-800">
+                    <div class="fun-icon bg-cyan-500 bg-opacity-20">
+                        <i class="fas fa-microchip text-cyan-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">AI for Living</h3>
+                    <p class="text-gray-300 mb-4">Explore how artificial intelligence is used in everyday life</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> AI tools to improve English writing, essays, and creative stories</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Design slides and visual</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> homework planning, reminders, or productivity apps</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-green-900 to-teal-900 bg-opacity-20 rounded-xl p-6 border border-green-800">
+                    <div class="fun-icon bg-green-500 bg-opacity-20">
+                        <i class="fas fa-globe text-green-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Web Development</h3>
+                    <p class="text-gray-300 mb-4">Create your first websites</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> HTML & CSS</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Simple JavaScript</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Personal projects</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Ages 14-16 Content (Hidden) -->
+        <div id="14-16" class="age-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-purple-900 to-indigo-900 bg-opacity-20 rounded-xl p-6 border border-purple-800">
+                    <div class="fun-icon bg-purple-500 bg-opacity-20">
+                        <i class="fas fa-laptop-code text-purple-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Advanced Programming</h3>
+                    <p class="text-gray-300 mb-4">Master programming concepts</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Python & Java & C++</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Data structures</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Algorithms</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-indigo-900 to-blue-900 bg-opacity-20 rounded-xl p-6 border border-indigo-800">
+                    <div class="fun-icon bg-indigo-500 bg-opacity-20">
+                        <i class="fas fa-mobile-alt text-indigo-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">App Development</h3>
+                    <p class="text-gray-300 mb-4">Build your own mobile apps</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> App design</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> App development</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Publishing apps</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-blue-900 to-purple-900 bg-opacity-20 rounded-xl p-6 border border-blue-800">
+                    <div class="fun-icon bg-blue-500 bg-opacity-20">
+                        <i class="fas fa-brain text-blue-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">AI & Machine Learning</h3>
+                    <p class="text-gray-300 mb-4">Explore the future of technology</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> AI basics</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Simple ML models</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> AI projects</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Path -->
+    <section id="curriculum" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Fun Learning Journey</span>
+        </h2>
+        <div class="max-w-4xl mx-auto">
+            <div class="space-y-6">
+                <div class="bg-card rounded-lg p-6 flex items-center">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center text-white font-bold mr-6">
+                        1
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-yellow-400">Foundation & Basics</h3>
+                        <p class="text-gray-400">Learn fundamental concepts through interactive games and activities</p>
+                    </div>
+                </div>
+                
+                <div class="bg-card rounded-lg p-6 flex items-center">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center text-white font-bold mr-6">
+                        2
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-orange-400">Creative Projects</h3>
+                        <p class="text-gray-400">Apply knowledge to create fun projects like games and animations</p>
+                    </div>
+                </div>
+                
+                <div class="bg-card rounded-lg p-6 flex items-center">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center text-white font-bold mr-6">
+                        3
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-pink-400">Advanced Concepts</h3>
+                        <p class="text-gray-400">Explore more complex topics with age-appropriate challenges</p>
+                    </div>
+                </div>
+                
+                <div class="bg-card rounded-lg p-6 flex items-center">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center text-white font-bold mr-6">
+                        4
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-purple-400">Showcase & Celebration</h3>
+                        <p class="text-gray-400">Present projects in our virtual showcase and celebrate achievements</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Why Parents Love Upskilld Kids</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="text-center">
+                <div class="fun-icon bg-yellow-500 bg-opacity-20">
+                    <i class="fas fa-brain text-yellow-400 text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Critical Thinking</h3>
+                <p class="text-gray-400">Develop problem-solving skills through fun challenges</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="fun-icon bg-orange-500 bg-opacity-20">
+                    <i class="fas fa-lightbulb text-orange-400 text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Creativity</h3>
+                <p class="text-gray-400">Express ideas through coding and digital art</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="fun-icon bg-pink-500 bg-opacity-20">
+                    <i class="fas fa-users text-pink-400 text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Collaboration</h3>
+                <p class="text-gray-400">Work with peers on exciting projects</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="fun-icon bg-purple-500 bg-opacity-20">
+                    <i class="fas fa-trophy text-purple-400 text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Confidence</h3>
+                <p class="text-gray-400">Build self-esteem through achievements</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">What Kids & Parents Say</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="testimonial-card">
+                <div class="flex items-start">
+                    <img src="https://picsum.photos/seed/kid1/60/60.jpg" alt="Kid" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold mb-1">Aryan, Age 12</h4>
+                        <p class="text-sm text-gray-400 mb-2">Student</p>
+                        <p class="text-gray-300">"I love creating my own games! My mentor makes coding so much fun. I can't wait for my class every week."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="flex items-start">
+                    <img src="https://picsum.photos/seed/parent1/60/60.jpg" alt="Parent" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold mb-1">Priya Sharma</h4>
+                        <p class="text-sm text-gray-400 mb-2">Parent of Ananya, Age 9</p>
+                        <p class="text-gray-300">"Upskilld has transformed how my daughter thinks about technology. She's more confident and creative now!"</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="flex items-start">
+                    <img src="https://picsum.photos/seed/kid2/60/60.jpg" alt="Kid" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold mb-1">Rohit, Age 14</h4>
+                        <p class="text-sm text-gray-400 mb-2">Student</p>
+                        <p class="text-gray-300">"I built my first app with Upskilld! Now I want to become a software engineer when I grow up."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="flex items-start">
+                    <img src="https://picsum.photos/seed/parent2/60/60.jpg" alt="Parent" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold mb-1">Rajesh Kumar</h4>
+                        <p class="text-sm text-gray-400 mb-2">Parent of Kabir, Age 11</p>
+                        <p class="text-gray-300">"The balance of learning and fun is perfect. My son is learning valuable skills while having a great time."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Choose Your Plan</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-5xl mx-auto">
+            <!-- <div class="pricing-card">
+                <h3 class="text-xl font-bold mb-2">Starter</h3>
+                <p class="text-gray-400 mb-4">Perfect for beginners</p>
+                <div class="text-3xl font-bold mb-4">₹2,999<span class="text-sm text-gray-400">/month</span></div>
+                <ul class="space-y-2 mb-6 text-gray-300">
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Access to basic courses</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> 50+ coding games</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Monthly projects</li>
+                </ul>
+                <button class="w-full bg-transparent border-2 border-yellow-500 text-yellow-400 py-2 rounded-lg hover:bg-yellow-500 hover:text-white transition">
+                    Start Learning
+                </button>
+            </div> -->
+            
+            <div class="pricing-card featured mx-auto relative overflow-hidden">
+    <!-- Discount Badge -->
+    <div class="absolute top-8 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold z-10 animate-pulse">
+        LIMITED TIME OFFER
+    </div>
+    
+    <div class="absolute -top-0 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-black px-4 py-1 rounded-full text-sm font-bold">
+        MOST POPULAR
+    </div>
+    
+    <h3 class="text-xl font-bold mb-2">Explorer</h3>
+    <p class="text-gray-400 mb-4">For curious minds</p>
+    
+    <!-- Pricing with Discount -->
+    <div class="text-center mb-4">
+        <div class="flex items-center justify-center gap-2">
+            <span class="text-2xl text-gray-500 line-through">₹5,999</span>
+            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded">SAVE ₹1,000</span>
+        </div>
+        <div class="text-3xl font-bold gradient-text">₹4,999<span class="text-sm text-gray-400">/month</span></div>
+    </div>
+    
+    <!-- Urgency Message -->
+    <div class="bg-red-900 bg-opacity-20 border border-red-500 rounded-lg p-2 mb-4 text-center">
+        <p class="text-red-400 text-sm font-semibold">
+            <i class="fas fa-clock mr-1 animate-pulse"></i> Discount ends in: <span id="discount-timer">24:00:00</span>
+        </p>
+    </div>
+    
+    <ul class="space-y-2 mb-6 text-gray-300">
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Access to Basic and Advanced courses</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> 100+ coding games</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Weekly live classes</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Personal mentor</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Monthly competitions</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Certificate of completion</li>
+    </ul>
+    
+    <a href="https://wa.me/+917778010753?text=Avail%20discount%20for%20my%20child!" target="_blank">
+        <button class="w-full gradient-bg text-white py-2 rounded-lg hover:opacity-90 transition font-semibold">
+            <i class="fas fa-bolt mr-2"></i> Grab Discount Now
+        </button>
+    </a>
+    
+    <!-- Additional Urgency Text -->
+    <p class="text-center text-xs text-gray-400 mt-3">
+        <i class="fas fa-fire text-orange-400 mr-1"></i> Only 5 spots left at this price!
+    </p>
+</div>
+            
+            <!-- <div class="pricing-card">
+                <h3 class="text-xl font-bold mb-2">Champion</h3>
+                <p class="text-gray-400 mb-4">For future tech leaders</p>
+                <div class="text-3xl font-bold mb-4">₹7,999<span class="text-sm text-gray-400">/month</span></div>
+                <ul class="space-y-2 mb-6 text-gray-300">
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Everything in Explorer</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Advanced courses</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> 1-on-1 sessions</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Project showcase</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Certificate of completion</li>
+                </ul>
+                <button class="w-full bg-transparent border-2 border-yellow-500 text-yellow-400 py-2 rounded-lg hover:bg-yellow-500 hover:text-white transition">
+                    Start Learning
+                </button>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="container mx-auto px-4 py-16 section-fade-in">
+        <div class="bg-gradient-to-r from-yellow-900 to-orange-900 rounded-2xl p-8 md:p-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                Ready to Start Your Child's Tech Journey?
+            </h2>
+            <p class="text-xl mb-8 text-gray-300">Join plenty of other kids who are already coding their future</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/+917778010753?text=Interested%20for%20my%20child!" target="_blank"><button class="bg-white text-yellow-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
+                    Start Free Trial
+                </button> </a>
+                <a href="https://wa.me/+917778010753?text=Enquiry%20for%20my%20child!" target="_blank">
+                <button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-yellow-900 transition">
+                    Talk to Mentor
+                </button> </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-card mt-16 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white"></i>
+                        </div>
+                        <span class="text-2xl font-bold gradient-text">Upskilld</span>
+                    </div>
+                    <p class="text-gray-400">Making tech learning fun for kids!</p>
+                </div>
+                <div class="mx-auto">
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#programs" class="hover:text-yellow-400 transition">Programs</a></li>
+                        <li><a href="#curriculum" class="hover:text-yellow-400 transition">Curriculum</a></li>
+                        <li><a href="#benefits" class="hover:text-yellow-400 transition">Benefits</a></li>
+                        <li><a href="#testimonials" class="hover:text-yellow-400 transition">Testimonials</a></li>
+                    </ul>
+                </div>
+                <!-- <div>
+                    <h4 class="font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-yellow-400 transition">Parent Guide</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition">Events</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition">FAQs</a></li>
+                    </ul>
+                </div> -->
+                <div class="mx-auto">
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-yellow-900 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-yellow-900 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-yellow-900 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-yellow-900 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>© 2025 Upskilld. All rights reserved.</p>
+                <p class="mt-2">Made with ❤️ for young innovators.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Age group switching
+        document.querySelectorAll('.age-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.age-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                document.querySelectorAll('.age-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                document.getElementById(this.dataset.age).classList.remove('hidden');
+            });
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.section-fade-in').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+//         function startDiscountTimer() {
+//     // Set the discount end time (24 hours from now)
+//     const endTime = new Date();
+//     endTime.setHours(endTime.getHours() + 24);
+    
+//     // Update the countdown every 1 second
+//     const timerInterval = setInterval(function() {
+//         // Get current time
+//         const now = new Date().getTime();
+        
+//         // Calculate remaining time
+//         const distance = endTime - now;
+        
+//         // Time calculations
+//         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+//         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+//         // Display the result
+//         document.getElementById("discount-timer").innerHTML = 
+//             hours.toString().padStart(2, '0') + ":" + 
+//             minutes.toString().padStart(2, '0') + ":" + 
+//             seconds.toString().padStart(2, '0');
+        
+//         // If the countdown is finished, reset it
+//         if (distance < 0) {
+//             clearInterval(timerInterval);
+//             document.getElementById("discount-timer").innerHTML = "EXPIRED";
+//         }
+//     }, 1000);
+// }
+
+// // Start the timer when the page loads
+// window.onload = startDiscountTimer;
+    </script>
+</body>
+</html>

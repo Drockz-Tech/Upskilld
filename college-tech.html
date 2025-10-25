@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upskilld - From DSA to Dream Job</title>
+    <meta name="description" content="Master DSA, Full Stack, AI/ML, and more. Get placed at top tech companies with Ed-Sphere's comprehensive tech programs.">
+    <meta name="keywords" content="DSA course, full stack development, AI ML course, data analytics, cloud computing, tech placement">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --bg-primary: #0D1117;
+            --bg-secondary: #161B22;
+            --bg-card: #21262D;
+            --text-primary: #F0F6FC;
+            --text-secondary: #8B949E;
+            --accent-blue: #3B82F6;
+            --accent-cyan: #06B6D4;
+            --accent-purple: #8B5CF6;
+        }
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+        }
+        
+        .tech-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        
+        .track-tab {
+            transition: all 0.3s ease;
+        }
+        
+        .track-tab.active {
+            background: var(--bg-card);
+            border-bottom: 3px solid var(--accent-blue);
+        }
+        
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stat-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-opacity-90" style="background-color: rgba(13, 17, 23, 0.9);">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white"></i>
+                    </div>
+                    <span class="text-2xl font-bold gradient-text">Upskilld</span>
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+                <a href="#tracks" class="hover:text-blue-400 transition">Tracks</a>
+                <a href="#curriculum" class="hover:text-blue-400 transition">Curriculum</a>
+                <a href="#success" class="hover:text-blue-400 transition">Placements</a>
+                <a href="#pricing" class="hover:text-blue-400 transition">Pricing</a>
+            </div>
+            <button class="md:hidden text-white">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 py-16 md:py-24">
+        <div class="text-center max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <span class="gradient-text">From DSA to Dream Job</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                Master in-demand tech skills with 500+ coding problems, 6+ real projects, and personalized mentorship
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a href="https://wa.me/+917778010753?text=Interested%20for%20my%20Tech%20career!" target="_blank"><button class="gradient-bg text-white px-8 py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition">
+                    <i class="fas fa-rocket mr-2"></i> Start Learning Now
+                </button></a>
+                <a href="https://wa.me/+917778010753?text=Give%20Tech%20Curriculum!"><button class="bg-transparent border-2 border-blue-500 text-blue-400 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-500 hover:text-white transition">
+                    <i class="fas fa-download mr-2"></i> Download Curriculum
+                </button> </a>
+            </div>
+            
+            <!-- Trust Indicators -->
+            <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+                <span class="bg-blue-900 bg-opacity-30 px-4 py-2 rounded-full">
+                    <i class="fas fa-code mr-2 text-blue-400"></i> 500+ Coding Problems
+                </span>
+                <span class="bg-cyan-900 bg-opacity-30 px-4 py-2 rounded-full">
+                    <i class="fas fa-project-diagram mr-2 text-cyan-400"></i> 6+ Real Projects
+                </span>
+                <span class="bg-purple-900 bg-opacity-30 px-4 py-2 rounded-full">
+                    <i class="fas fa-briefcase mr-2 text-purple-400"></i> 100+ Company Placement Training
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Tracks -->
+    <section id="tracks" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Choose Your Tech Track</span>
+        </h2>
+        <div class="flex flex-col md:flex-row justify-center mb-8">
+            <button class="track-tab active px-6 py-3 text-center" data-track="fullstack">Full Stack</button>
+            <button class="track-tab px-6 py-3 text-center" data-track="aiml">AI/ML</button>
+            <button class="track-tab px-6 py-3 text-center" data-track="data">Data Analytics</button>
+            <button class="track-tab px-6 py-3 text-center" data-track="cloud">Cloud Computing</button>
+        </div>
+        
+        <!-- Full Stack Content -->
+        <div id="fullstack" class="track-content">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-blue-900 to-cyan-900 bg-opacity-20 rounded-xl p-6 border border-blue-800">
+                    <div class="tech-icon bg-blue-500 bg-opacity-20">
+                        <i class="fas fa-html5 text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Frontend Development</h3>
+                    <p class="text-gray-300 mb-4">Build responsive, interactive web applications</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> HTML5, CSS3, JavaScript</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> React.js & Redux</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> TypeScript & Next.js</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-cyan-900 to-blue-900 bg-opacity-20 rounded-xl p-6 border border-cyan-800">
+                    <div class="tech-icon bg-cyan-500 bg-opacity-20">
+                        <i class="fas fa-server text-cyan-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Backend Development</h3>
+                    <p class="text-gray-300 mb-4">Create robust server-side applications</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Node.js & Express</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> REST APIs & GraphQL</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Authentication & Security</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-purple-900 to-blue-900 bg-opacity-20 rounded-xl p-6 border border-purple-800">
+                    <div class="tech-icon bg-purple-500 bg-opacity-20">
+                        <i class="fas fa-database text-purple-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Database & DevOps</h3>
+                    <p class="text-gray-300 mb-4">Manage data and deployment efficiently</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> SQL & NoSQL Databases</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Docker & Kubernetes</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> CI/CD Pipelines</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AI/ML Content (Hidden) -->
+        <div id="aiml" class="track-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-purple-900 to-pink-900 bg-opacity-20 rounded-xl p-6 border border-purple-800">
+                    <div class="tech-icon bg-purple-500 bg-opacity-20">
+                        <i class="fas fa-brain text-purple-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Machine Learning</h3>
+                    <p class="text-gray-300 mb-4">Build intelligent systems that learn from data</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Supervised & Unsupervised Learning</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Deep Learning & Neural Networks</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> TensorFlow & PyTorch</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-pink-900 to-purple-900 bg-opacity-20 rounded-xl p-6 border border-pink-800">
+                    <div class="tech-icon bg-pink-500 bg-opacity-20">
+                        <i class="fas fa-robot text-pink-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">AI Applications</h3>
+                    <p class="text-gray-300 mb-4">Apply AI to solve real-world problems</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Computer Vision</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Natural Language Processing</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Reinforcement Learning</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-indigo-900 to-purple-900 bg-opacity-20 rounded-xl p-6 border border-indigo-800">
+                    <div class="tech-icon bg-indigo-500 bg-opacity-20">
+                        <i class="fas fa-chart-line text-indigo-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">MLOps</h3>
+                    <p class="text-gray-300 mb-4">Deploy and maintain ML models in production</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Model Deployment</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Model Monitoring</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> A/B Testing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Data Analytics Content (Hidden) -->
+        <div id="data" class="track-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-green-900 to-teal-900 bg-opacity-20 rounded-xl p-6 border border-green-800">
+                    <div class="tech-icon bg-green-500 bg-opacity-20">
+                        <i class="fas fa-chart-bar text-green-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Data Analysis</h3>
+                    <p class="text-gray-300 mb-4">Extract insights from complex datasets</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Python & Pandas</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Statistical Analysis</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Data Visualization</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-teal-900 to-green-900 bg-opacity-20 rounded-xl p-6 border border-teal-800">
+                    <div class="tech-icon bg-teal-500 bg-opacity-20">
+                        <i class="fas fa-database text-teal-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">SQL & Big Data</h3>
+                    <p class="text-gray-300 mb-4">Work with databases and big data technologies</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Advanced SQL</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Hadoop & Spark</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Data Warehousing</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-emerald-900 to-green-900 bg-opacity-20 rounded-xl p-6 border border-emerald-800">
+                    <div class="tech-icon bg-emerald-500 bg-opacity-20">
+                        <i class="fas fa-chart-pie text-emerald-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Business Intelligence</h3>
+                    <p class="text-gray-300 mb-4">Create dashboards and reports for decision making</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Tableau & Power BI</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> KPI Development</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Report Automation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cloud Computing Content (Hidden) -->
+        <div id="cloud" class="track-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-orange-900 to-red-900 bg-opacity-20 rounded-xl p-6 border border-orange-800">
+                    <div class="tech-icon bg-orange-500 bg-opacity-20">
+                        <i class="fab fa-aws text-orange-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">AWS Cloud</h3>
+                    <p class="text-gray-300 mb-4">Master Amazon Web Services</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> EC2, S3, RDS</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Lambda & Serverless</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Cloud Architecture</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-red-900 to-orange-900 bg-opacity-20 rounded-xl p-6 border border-red-800">
+                    <div class="tech-icon bg-red-500 bg-opacity-20">
+                        <i class="fas fa-cloud text-red-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Azure & GCP</h3>
+                    <p class="text-gray-300 mb-4">Learn multi-cloud strategies</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Azure Services</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Google Cloud Platform</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Cloud Migration</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-yellow-900 to-orange-900 bg-opacity-20 rounded-xl p-6 border border-yellow-800">
+                    <div class="tech-icon bg-yellow-500 bg-opacity-20">
+                        <i class="fas fa-shield-alt text-yellow-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Cloud Security</h3>
+                    <p class="text-gray-300 mb-4">Secure cloud infrastructure</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> IAM & Access Control</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Network Security</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Compliance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Path -->
+    <section id="curriculum" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Your 12-Month Learning Journey</span>
+        </h2>
+        <div class="max-w-4xl mx-auto">
+            <div class="space-y-6">
+                <div class="bg-card rounded-lg p-6 flex items-center">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center text-white font-bold mr-6">
+                        1
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-blue-400">Month 1-2: Foundation & DSA</h3>
+                        <p class="text-gray-400">Master data structures, algorithms, and problem-solving patterns</p>
+                    </div>
+                </div>
+                
+                <div class="bg-card rounded-lg p-6 flex items-center">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center text-white font-bold mr-6">
+                        2
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-cyan-400">Month 3-5: Core Technologies</h3>
+                        <p class="text-gray-400">Deep dive into your chosen track with hands-on projects</p>
+                    </div>
+                </div>
+                
+                <div class="bg-card rounded-lg p-6 flex items-center">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center text-white font-bold mr-6">
+                        3
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-purple-400">Month 6-8: Advanced Concepts</h3>
+                        <p class="text-gray-400">Learn advanced topics and build complex applications</p>
+                    </div>
+                </div>
+                
+                <div class="bg-card rounded-lg p-6 flex items-center">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center text-white font-bold mr-6">
+                        4
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-green-400">Month 9-11: Interview Prep</h3>
+                        <p class="text-gray-400">System design, behavioral interviews, and mock tests</p>
+                    </div>
+                </div>
+                
+                <div class="bg-card rounded-lg p-6 flex items-center">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center text-white font-bold mr-6">
+                        5
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-indigo-400">Month 12: Job Applications</h3>
+                        <p class="text-gray-400">Resume building, portfolio creation, and placement support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placement Stats -->
+    <!-- <section id="placements" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Placement Success</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+            <div class="stat-card">
+                <div class="text-4xl font-bold gradient-text mb-2">₹25 LPA</div>
+                <p class="text-gray-400">Average Package</p>
+            </div>
+            <div class="stat-card">
+                <div class="text-4xl font-bold gradient-text mb-2">1000+</div>
+                <p class="text-gray-400">Students Placed</p>
+            </div>
+            <div class="stat-card">
+                <div class="text-4xl font-bold gradient-text mb-2">92%</div>
+                <p class="text-gray-400">Placement Rate</p>
+            </div>
+            <div class="stat-card">
+                <div class="text-4xl font-bold gradient-text mb-2">150+</div>
+                <p class="text-gray-400">Hiring Partners</p>
+            </div>
+        </div>
+        
+        <div class="flex flex-wrap justify-center gap-8">
+            <div class="w-32 h-16 bg-gray-800 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition">
+                <span class="text-gray-400 font-bold">Amazon</span>
+            </div>
+            <div class="w-32 h-16 bg-gray-800 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition">
+                <span class="text-gray-400 font-bold">Microsoft</span>
+            </div>
+            <div class="w-32 h-16 bg-gray-800 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition">
+                <span class="text-gray-400 font-bold">Google</span>
+            </div>
+            <div class="w-32 h-16 bg-gray-800 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition">
+                <span class="text-gray-400 font-bold">Meta</span>
+            </div>
+            <div class="w-32 h-16 bg-gray-800 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition">
+                <span class="text-gray-400 font-bold">Netflix</span>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Student Success Stories -->
+    <section id = "success" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Success Stories</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-card rounded-lg p-6">
+                <div class="flex items-start">
+                    <img src="https://picsum.photos/seed/techstudent1/60/60.jpg" alt="Student" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold mb-1">Raghav Bansal</h4>
+                        <p class="text-sm text-gray-400 mb-2">Placed at BottomLine • ₹13 LPA</p>
+                        <p class="text-gray-300">"The structured curriculum and mock interviews at Upskilld helped me crack my dream job. The mentors are industry experts!"</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-card rounded-lg p-6">
+                <div class="flex items-start">
+                    <img src="https://picsum.photos/seed/techstudent2/60/60.jpg" alt="Student" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold mb-1">Karan Sharma</h4>
+                        <p class="text-sm text-gray-400 mb-2">Placed at Societe Generale • ₹12 LPA</p>
+                        <p class="text-gray-300">"From a college student to a software engineer at Soc-Gen, Upskilld transformed my career completely."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Choose Your Plan</span>
+        </h2>
+         <div class="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-5xl mx-auto">
+            <!-- <div class="bg-card rounded-xl p-6 border border-gray-700">
+                <h3 class="text-xl font-bold mb-2">Basic</h3>
+                <p class="text-gray-400 mb-4">Self-paced learning</p>
+                <div class="text-3xl font-bold mb-4">₹9,999<span class="text-sm text-gray-400">/month</span></div>
+                <ul class="space-y-2 mb-6 text-gray-300">
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Access to all courses</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> 500+ coding problems</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Community support</li>
+                </ul>
+                <button class="w-full bg-transparent border-2 border-blue-500 text-blue-400 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition">
+                    Start Learning
+                </button>
+            </div> -->
+            
+            <div class="bg-card rounded-xl p-6 border-2 border-blue-500 relative mx-auto overflow-hidden">
+    <!-- Discount Badge -->
+    <div class="absolute top-7 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold z-10 animate-pulse">
+        LIMITED TIME OFFER
+    </div>
+    
+    <div class="absolute -top-1 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+        MOST POPULAR
+    </div>
+    
+    <h3 class="text-xl font-bold mb-2">Pro</h3>
+    <p class="text-gray-400 mb-4">Guided learning with mentorship</p>
+    
+    <!-- Pricing with Discount -->
+    <div class="text-center mb-4">
+        <div class="flex items-center justify-center gap-2">
+            <span class="text-2xl text-gray-500 line-through">₹8,999</span>
+            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded">SAVE ₹3,000</span>
+        </div>
+        <div class="text-3xl font-bold gradient-text">₹5,999<span class="text-sm text-gray-400">/month</span></div>
+    </div>
+    
+    <!-- Urgency Message -->
+    <div class="bg-red-900 bg-opacity-20 border border-red-500 rounded-lg p-2 mb-4 text-center">
+        <p class="text-red-400 text-sm font-semibold">
+            <i class="fas fa-clock mr-1"></i> Discount ends in: <span id="discount-timer-pro">24:00:00</span>
+        </p>
+    </div>
+    
+    <ul class="space-y-2 mb-6 text-gray-300">
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Access to all courses</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Live classes & doubt sessions</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> 1-on-1 mentorship</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> 6+ real projects</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Interview preparation</li>
+    </ul>
+    
+    <a href="https://wa.me/+917778010753?text=Avail%20discount%20for%20tech!" target="_blank"><button class="w-full gradient-bg text-white py-2 rounded-lg hover:opacity-90 transition font-semibold">
+        <i class="fas fa-bolt mr-2"></i> Grab Discount Now
+    </button></a>
+    
+    <!-- Additional Urgency Text -->
+    <p class="text-center text-xs text-gray-400 mt-3">
+        <i class="fas fa-fire text-orange-400 mr-1"></i> Only 7 spots left at this price!
+    </p>
+</div>
+            
+            <!-- <div class="bg-card rounded-xl p-6 border border-gray-700">
+                <h3 class="text-xl font-bold mb-2">Premium</h3>
+                <p class="text-gray-400 mb-4">Job guarantee program</p>
+                <div class="text-3xl font-bold mb-4">₹39,999<span class="text-sm text-gray-400">/month</span></div>
+                <ul class="space-y-2 mb-6 text-gray-300">
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Everything in Pro</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Personal mentor (2:1 ratio)</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Job guarantee or refund</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Premium placement support</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Alumni network access</li>
+                </ul>
+                <button class="w-full bg-transparent border-2 border-blue-500 text-blue-400 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition">
+                    Start Learning
+                </button>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="container mx-auto px-4 py-16 section-fade-in">
+        <div class="bg-gradient-to-r from-blue-900 to-cyan-900 rounded-2xl p-8 md:p-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                Ready to Launch Your Tech Career?
+            </h2>
+            <p class="text-xl mb-8 text-gray-300">Join plenty of other students who got placed at top tech companies</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/+917778010753?text=Interested%20for%20my%20Tech%20career!" target="_blank"><button class="bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
+                    Apply Now
+                </button></a>
+                <a href="https://wa.me/+917778010753?text=Inquiry%20for%20Tech!" target="_blank"><button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition">
+                    Talk to Mentor
+                </button></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-card mt-16 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white"></i>
+                        </div>
+                        <span class="text-2xl font-bold gradient-text">Upskilld</span>
+                    </div>
+                    <p class="text-gray-400">Your gateway to top tech careers.</p>
+                </div>
+                <div class="mx-auto">
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#tracks" class="hover:text-blue-400 transition">Tracks</a></li>
+                        <li><a href="#curriculum" class="hover:text-blue-400 transition">Curriculum</a></li>
+                        <li><a href="#success" class="hover:text-blue-400 transition">Placements</a></li>
+                        <li><a href="#pricing" class="hover:text-blue-400 transition">Pricing</a></li>
+                    </ul>
+                </div>
+                <!-- <div>
+                    <h4 class="font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-blue-400 transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Events</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">FAQs</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Contact</a></li>
+                    </ul>
+                </div> -->
+                <div class="mx-auto">
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-900 transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-900 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-900 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>© 2025 Upskilld. All rights reserved.</p>
+                <p class="mt-2">Made with ❤️ for future tech leaders.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Track switching
+        document.querySelectorAll('.track-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.track-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                document.querySelectorAll('.track-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                document.getElementById(this.dataset.track).classList.remove('hidden');
+            });
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.section-fade-in').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

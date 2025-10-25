@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upskilld Non-Tech - Launch Your Career Without Code</title>
+    <meta name="description" content="Master digital marketing, Excel, communication skills, and more. Build a successful career without coding with Ed-Sphere's non-tech programs.">
+    <meta name="keywords" content="digital marketing course, Excel training, communication skills, non-tech careers, professional development">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --bg-primary: #0D1117;
+            --bg-secondary: #161B22;
+            --bg-card: #21262D;
+            --text-primary: #F0F6FC;
+            --text-secondary: #8B949E;
+            --accent-green: #10B981;
+            --accent-teal: #14B8A6;
+            --accent-emerald: #059669;
+            --accent-lime: #84CC16;
+            --accent-cyan: #06B6D4;
+        }
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-green), var(--accent-teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--accent-green), var(--accent-teal));
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+        }
+        
+        .skill-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+        
+        .track-tab {
+            transition: all 0.3s ease;
+        }
+        
+        .track-tab.active {
+            background: var(--bg-card);
+            border-bottom: 3px solid var(--accent-green);
+        }
+        
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stat-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+        
+        .testimonial-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 100px;
+            color: var(--accent-green);
+            opacity: 0.2;
+        }
+        
+        .pricing-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid var(--accent-green);
+        }
+        
+        .career-path {
+            position: relative;
+        }
+        
+        .career-path::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-green), transparent);
+            z-index: -1;
+        }
+        
+        .career-path:last-child::after {
+            display: none;
+        }
+        
+        .skill-progress {
+            height: 8px;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-green), var(--accent-teal));
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-opacity-90" style="background-color: rgba(13, 17, 23, 0.9);">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white"></i>
+                    </div>
+                    <span class="text-2xl font-bold gradient-text">Upskilld</span>
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#programs" class="hover:text-green-400 transition">Programs</a>
+                <a href="#curriculum" class="hover:text-green-400 transition">Curriculum</a>
+                <a href="#careers" class="hover:text-green-400 transition">Career Paths</a>
+                <a href="#testimonials" class="hover:text-green-400 transition">Success Stories</a>
+                <a href="#pricing" class="hover:text-green-400 transition">Pricing</a>
+            </div>
+            <button class="md:hidden text-white">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 py-16 md:py-24">
+        <div class="text-center max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <span class="gradient-text">Build Your Career Without Code</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                Master in-demand digital skills and launch your career in marketing, sales, operations, and more
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a href="https://wa.me/+917778010753?text=Interested%20for%20my%20Non-Tech%20career!" target="_blank"><button class="gradient-bg text-white px-8 py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition">
+                    <i class="fas fa-rocket mr-2"></i> Start Your Journey
+                </button></a>
+                <a href="https://wa.me/+917778010753?text=Give%20Non-Tech%20Curriculum!" target="_blank"><button class="bg-transparent border-2 border-green-500 text-green-400 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-500 hover:text-white transition">
+                    <i class="fas fa-download mr-2"></i> Download Brochure
+                </button></a>
+            </div>
+            
+            <!-- Trust Indicators -->
+            <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+                <span class="bg-green-900 bg-opacity-30 px-4 py-2 rounded-full">
+                    <i class="fas fa-bullhorn mr-2 text-green-400"></i> Digital Marketing
+                </span>
+                <span class="bg-teal-900 bg-opacity-30 px-4 py-2 rounded-full">
+                    <i class="fas fa-chart-line mr-2 text-teal-400"></i> Business Analytics
+                </span>
+                <span class="bg-emerald-900 bg-opacity-30 px-4 py-2 rounded-full">
+                    <i class="fas fa-comments mr-2 text-emerald-400"></i> Communication Skills
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Tracks -->
+    <section id="programs" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Choose Your Career Path</span>
+        </h2>
+        <div class="flex flex-col md:flex-row justify-center mb-8">
+            <button class="track-tab active px-6 py-3 text-center" data-track="marketing">Digital Marketing</button>
+            <button class="track-tab px-6 py-3 text-center" data-track="sales">Sales & Business</button>
+            <button class="track-tab px-6 py-3 text-center" data-track="operations">Operations</button>
+            <button class="track-tab px-6 py-3 text-center" data-track="hr">HR & People</button>
+        </div>
+        
+        <!-- Digital Marketing Content -->
+        <div id="marketing" class="track-content">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-green-900 to-teal-900 bg-opacity-20 rounded-xl p-6 border border-green-800">
+                    <div class="skill-icon bg-green-500 bg-opacity-20">
+                        <i class="fas fa-search text-green-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">SEO & SEM</h3>
+                    <p class="text-gray-300 mb-4">Master search engine optimization and marketing</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Keyword research</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> On-page SEO</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Google Ads</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-teal-900 to-cyan-900 bg-opacity-20 rounded-xl p-6 border border-teal-800">
+                    <div class="skill-icon bg-teal-500 bg-opacity-20">
+                        <i class="fab fa-instagram text-teal-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Social Media Marketing</h3>
+                    <p class="text-gray-300 mb-4">Build brand presence across platforms</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Content strategy</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Community management</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Social analytics</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-emerald-900 to-green-900 bg-opacity-20 rounded-xl p-6 border border-emerald-800">
+                    <div class="skill-icon bg-emerald-500 bg-opacity-20">
+                        <i class="fas fa-envelope text-emerald-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Email Marketing</h3>
+                    <p class="text-gray-300 mb-4">Create effective email campaigns</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Campaign design</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Automation</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> A/B testing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sales & Business Content (Hidden) -->
+        <div id="sales" class="track-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-blue-900 to-indigo-900 bg-opacity-20 rounded-xl p-6 border border-blue-800">
+                    <div class="skill-icon bg-blue-500 bg-opacity-20">
+                        <i class="fas fa-handshake text-blue-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Sales Fundamentals</h3>
+                    <p class="text-gray-300 mb-4">Master the art of selling</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Sales techniques</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Negotiation skills</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> CRM tools</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-indigo-900 to-purple-900 bg-opacity-20 rounded-xl p-6 border border-indigo-800">
+                    <div class="skill-icon bg-indigo-500 bg-opacity-20">
+                        <i class="fas fa-chart-pie text-indigo-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Business Development</h3>
+                    <p class="text-gray-300 mb-4">Drive business growth</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Market research</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Partnership building</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Revenue strategies</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-purple-900 to-pink-900 bg-opacity-20 rounded-xl p-6 border border-purple-800">
+                    <div class="skill-icon bg-purple-500 bg-opacity-20">
+                        <i class="fas fa-users text-purple-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Client Relations</h3>
+                    <p class="text-gray-300 mb-4">Build lasting client relationships</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Relationship management</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Customer success</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Account management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Operations Content (Hidden) -->
+        <div id="operations" class="track-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-orange-900 to-red-900 bg-opacity-20 rounded-xl p-6 border border-orange-800">
+                    <div class="skill-icon bg-orange-500 bg-opacity-20">
+                        <i class="fas fa-cogs text-orange-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Process Optimization</h3>
+                    <p class="text-gray-300 mb-4">Streamline business operations</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Workflow design</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Efficiency improvement</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Quality control</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-red-900 to-orange-900 bg-opacity-20 rounded-xl p-6 border border-red-800">
+                    <div class="skill-icon bg-red-500 bg-opacity-20">
+                        <i class="fas fa-project-diagram text-red-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Project Management</h3>
+                    <p class="text-gray-300 mb-4">Lead projects to success</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Planning & scheduling</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Resource management</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Risk assessment</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-yellow-900 to-orange-900 bg-opacity-20 rounded-xl p-6 border border-yellow-800">
+                    <div class="skill-icon bg-yellow-500 bg-opacity-20">
+                        <i class="fas fa-clipboard-check text-yellow-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Supply Chain</h3>
+                    <p class="text-gray-300 mb-4">Manage supply chain operations</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Inventory management</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Logistics coordination</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Vendor relations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- HR & People Content (Hidden) -->
+        <div id="hr" class="track-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-pink-900 to-rose-900 bg-opacity-20 rounded-xl p-6 border border-pink-800">
+                    <div class="skill-icon bg-pink-500 bg-opacity-20">
+                        <i class="fas fa-user-tie text-pink-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Talent Acquisition</h3>
+                    <p class="text-gray-300 mb-4">Find and hire the best talent</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Recruitment strategies</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Interview techniques</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Onboarding</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-rose-900 to-pink-900 bg-opacity-20 rounded-xl p-6 border border-rose-800">
+                    <div class="skill-icon bg-rose-500 bg-opacity-20">
+                        <i class="fas fa-chart-line text-rose-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">HR Analytics</h3>
+                    <p class="text-gray-300 mb-4">Use data to drive HR decisions</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Performance metrics</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Employee engagement</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Retention analysis</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-fuchsia-900 to-pink-900 bg-opacity-20 rounded-xl p-6 border border-fuchsia-800">
+                    <div class="skill-icon bg-fuchsia-500 bg-opacity-20">
+                        <i class="fas fa-graduation-cap text-fuchsia-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Training & Development</h3>
+                    <p class="text-gray-300 mb-4">Nurture employee growth</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Training programs</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Career planning</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Skill development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Essential Skills -->
+    <section id="curriculum" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Essential Skills for Every Career</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="bg-card rounded-lg p-6">
+                <h3 class="text-xl font-bold mb-4 text-green-400">
+                    <i class="fas fa-file-excel mr-2"></i> Excel Mastery
+                </h3>
+                <p class="text-gray-300 mb-4">Become an Excel expert with advanced formulas and data analysis</p>
+                <div class="space-y-3">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Basic Functions</span>
+                            <span>100%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Pivot Tables</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Data Visualization</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-card rounded-lg p-6">
+                <h3 class="text-xl font-bold mb-4 text-teal-400">
+                    <i class="fas fa-comments mr-2"></i> Communication Skills
+                </h3>
+                <p class="text-gray-300 mb-4">Master professional communication for workplace success</p>
+                <div class="space-y-3">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Presentation Skills</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Email Etiquette</span>
+                            <span>100%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Business Writing</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Paths -->
+    <section id="careers" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Your Career Journey</span>
+        </h2>
+        <div class="max-w-4xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center relative">
+                <div class="career-path w-20 h-20 rounded-full gradient-bg flex items-center justify-center text-white font-bold mb-4 md:mb-0">
+                    1
+                </div>
+                <div class="career-path w-20 h-20 rounded-full gradient-bg flex items-center justify-center text-white font-bold mb-4 md:mb-0">
+                    2
+                </div>
+                <div class="career-path w-20 h-20 rounded-full gradient-bg flex items-center justify-center text-white font-bold mb-4 md:mb-0">
+                    3
+                </div>
+                <div class="career-path w-20 h-20 rounded-full gradient-bg flex items-center justify-center text-white font-bold mb-4 md:mb-0">
+                    4
+                </div>
+                <div class="career-path w-20 h-20 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
+                    5
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+                <div class="bg-card rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2 text-green-400">Month 1: Foundation</h3>
+                    <p class="text-gray-400">Build strong fundamentals in your chosen domain</p>
+                </div>
+                <div class="bg-card rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2 text-teal-400">Month 2-3: Core Skills</h3>
+                    <p class="text-gray-400">Master essential tools and techniques</p>
+                </div>
+                <div class="bg-card rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2 text-emerald-400">Month 4: Projects</h3>
+                    <p class="text-gray-400">Apply skills to real-world scenarios</p>
+                </div>
+                <div class="bg-card rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2 text-lime-400">Month 5: Soft Skills</h3>
+                    <p class="text-gray-400">Develop communication and leadership skills</p>
+                </div>
+                <div class="bg-card rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2 text-cyan-400">Month 6: Job Prep</h3>
+                    <p class="text-gray-400">Resume building and interview preparation</p>
+                </div>
+                <div class="bg-card rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-2 text-green-400">Ongoing: Support</h3>
+                    <p class="text-gray-400">Career guidance and alumni network</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placement Stats -->
+    <!-- <section class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Career Success</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+            <div class="stat-card">
+                <div class="text-4xl font-bold gradient-text mb-2">₹8 LPA</div>
+                <p class="text-gray-400">Average Package</p>
+            </div>
+            <div class="stat-card">
+                <div class="text-4xl font-bold gradient-text mb-2">500+</div>
+                <p class="text-gray-400">Students Placed</p>
+            </div>
+            <div class="stat-card">
+                <div class="text-4xl font-bold gradient-text mb-2">88%</div>
+                <p class="text-gray-400">Placement Rate</p>
+            </div>
+            <div class="stat-card">
+                <div class="text-4xl font-bold gradient-text mb-2">100+</div>
+                <p class="text-gray-400">Hiring Partners</p>
+            </div>
+        </div>
+        
+        <div class="flex flex-wrap justify-center gap-8">
+            <div class="w-32 h-16 bg-gray-800 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition">
+                <span class="text-gray-400 font-bold">Byju's</span>
+            </div>
+            <div class="w-32 h-16 bg-gray-800 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition">
+                <span class="text-gray-400 font-bold">Unacademy</span>
+            </div>
+            <div class="w-32 h-16 bg-gray-800 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition">
+                <span class="text-gray-400 font-bold">Zomato</span>
+            </div>
+            <div class="w-32 h-16 bg-gray-800 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition">
+                <span class="text-gray-400 font-bold">Swiggy</span>
+            </div>
+            <div class="w-32 h-16 bg-gray-800 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition">
+                <span class="text-gray-400 font-bold">Oyo</span>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Success Stories</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="testimonial-card">
+                <div class="flex items-start">
+                    <img src="https://picsum.photos/seed/nontech1/60/60.jpg" alt="Student" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold mb-1">Anjali Singh</h4>
+                        <p class="text-sm text-gray-400 mb-2">Digital Marketing Executive</p>
+                        <p class="text-gray-300">"Upskilld helped me transition from a B.Com background to a successful digital marketing career. The practical training was invaluable!"</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="flex items-start">
+                    <img src="https://picsum.photos/seed/nontech2/60/60.jpg" alt="Student" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold mb-1">Rohit Patel</h4>
+                        <p class="text-sm text-gray-400 mb-2">Business Development Manager</p>
+                        <p class="text-gray-300">"The sales training at Upskilld gave me the confidence and skills to excel in my role. I'm now leading a team of 5!"</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <div class="testimonial-card">
+                <div class="flex items-start">
+                    <img src="https://picsum.photos/seed/nontech3/60/60.jpg" alt="Student" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold mb-1">Priya Nair</h4>
+                        <p class="text-sm text-gray-400 mb-2">HR Executive • Unacademy</p>
+                        <p class="text-gray-300">"From an arts background to HR professional - Ed-Sphere made it possible. The mentorship and placement support were exceptional."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="flex items-start">
+                    <img src="https://picsum.photos/seed/nontech4/60/60.jpg" alt="Student" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold mb-1">Amit Kumar</h4>
+                        <p class="text-sm text-gray-400 mb-2">Operations Manager • Swiggy</p>
+                        <p class="text-gray-300">"The operations course gave me practical skills that I use daily. I'm proud to be part of a fast-growing startup!"</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Choose Your Plan</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-5xl mx-auto">
+            <!-- <div class="pricing-card">
+                <h3 class="text-xl font-bold mb-2">Basic</h3>
+                <p class="text-gray-400 mb-4">Self-paced learning</p>
+                <div class="text-3xl font-bold mb-4">₹5,999<span class="text-sm text-gray-400">/month</span></div>
+                <ul class="space-y-2 mb-6 text-gray-300">
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Access to all courses</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Study materials</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Community support</li>
+                </ul>
+                <button class="w-full bg-transparent border-2 border-green-500 text-green-400 py-2 rounded-lg hover:bg-green-500 hover:text-white transition">
+                    Start Learning
+                </button>
+            </div> -->
+            
+            <div class="pricing-card featured mx-auto relative overflow-hidden">
+    <!-- Discount Badge -->
+    <div class="absolute top-7 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold z-10 animate-pulse">
+        LIMITED TIME OFFER
+    </div>
+    
+    <div class="absolute -top-1 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+        MOST POPULAR
+    </div>
+    
+    <h3 class="text-xl font-bold mb-2">Pro</h3>
+    <p class="text-gray-400 mb-4">Guided learning with mentorship</p>
+    
+    <!-- Pricing with Discount -->
+    <div class="text-center mb-4">
+        <div class="flex items-center justify-center gap-2">
+            <span class="text-2xl text-gray-500 line-through">₹8,999</span>
+            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded">SAVE ₹2,000</span>
+        </div>
+        <div class="text-3xl font-bold gradient-text">₹6,999<span class="text-sm text-gray-400">/month</span></div>
+    </div>
+    
+    <!-- Urgency Message -->
+    <div class="bg-red-900 bg-opacity-20 border border-red-500 rounded-lg p-2 mb-4 text-center">
+        <p class="text-red-400 text-sm font-semibold">
+            <i class="fas fa-clock mr-1"></i> Discount ends in: <span id="discount-timer-pro-green">24:00:00</span>
+        </p>
+    </div>
+    
+    <ul class="space-y-2 mb-6 text-gray-300">
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Everything in Basic</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Live classes & doubt sessions</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> 1-on-1 mentorship</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Real projects</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Interview preparation</li>
+    </ul>
+    
+    <a href="https://wa.me/+917778010753?text=Avail%20discount%20for%20non-tech!" target="_blank"><button class="w-full gradient-bg text-white py-2 rounded-lg hover:opacity-90 transition font-semibold">
+        <i class="fas fa-bolt mr-2"></i> Grab Discount Now
+    </button></a>
+    
+    <!-- Additional Urgency Text -->
+    <p class="text-center text-xs text-gray-400 mt-3">
+        <i class="fas fa-fire text-orange-400 mr-1"></i> Only 7 spots left at this price!
+    </p>
+</div>
+            
+            <!-- <div class="pricing-card">
+                <h3 class="text-xl font-bold mb-2">Premium</h3>
+                <p class="text-gray-400 mb-4">Job guarantee program</p>
+                <div class="text-3xl font-bold mb-4">₹19,999<span class="text-sm text-gray-400">/month</span></div>
+                <ul class="space-y-2 mb-6 text-gray-300">
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Everything in Pro</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Personal mentor (1:1 ratio)</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Job guarantee or refund</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Premium placement support</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Alumni network access</li>
+                </ul>
+                <button class="w-full bg-transparent border-2 border-green-500 text-green-400 py-2 rounded-lg hover:bg-green-500 hover:text-white transition">
+                    Start Learning
+                </button>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="container mx-auto px-4 py-16 section-fade-in">
+        <div class="bg-gradient-to-r from-green-900 to-teal-900 rounded-2xl p-8 md:p-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                Ready to Launch Your Non-Tech Career?
+            </h2>
+            <p class="text-xl mb-8 text-gray-300">Join plenty of other students who built successful careers without coding</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/+917778010753?text=Interested%20for%20my%20Non-Tech%20career!" target="_blank"><button class="bg-white text-green-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
+                    Apply Now
+                </button></a>
+                <a href="https://wa.me/+917778010753?text=Inquiry%20for%20Non-Tech!" target="_blank"><button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-green-900 transition">
+                    Talk to Mentor
+                </button></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-card mt-16 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white"></i>
+                        </div>
+                        <span class="text-2xl font-bold gradient-text">Upskilld</span>
+                    </div>
+                    <p class="text-gray-400">Your gateway to successful non-tech careers.</p>
+                </div>
+                <div class="mx-auto">
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#programs" class="hover:text-green-400 transition">Programs</a></li>
+                        <li><a href="#curriculum" class="hover:text-green-400 transition">Curriculum</a></li>
+                        <li><a href="#careers" class="hover:text-green-400 transition">Career Paths</a></li>
+                        <li><a href="#pricing" class="hover:text-green-400 transition">Pricing</a></li>
+                    </ul>
+                </div>
+                <!-- <div>
+                    <h4 class="font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-green-400 transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition">Events</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition">FAQs</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition">Contact</a></li>
+                    </ul>
+                </div> -->
+                <div class="mx-auto">
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-900 transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-900 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-900 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-900 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>© 2025 Upskilld. All rights reserved.</p>
+                <p class="mt-2">Made with ❤️ for future professionals.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Track switching
+        document.querySelectorAll('.track-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.track-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                document.querySelectorAll('.track-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                document.getElementById(this.dataset.track).classList.remove('hidden');
+            });
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.section-fade-in').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

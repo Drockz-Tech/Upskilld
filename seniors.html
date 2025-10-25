@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upskilld Seniors - It's Never Too Late to Learn Digital Skills</title>
+    <meta name="description" content="Digital literacy programs for seniors. Learn smartphone basics, internet safety, and AI for daily life at your own pace with Ed-Sphere.">
+    <meta name="keywords" content="digital literacy for seniors, smartphone training, online safety, computer basics for elderly">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --bg-primary: #0D1117;
+            --bg-secondary: #161B22;
+            --bg-card: #21262D;
+            --text-primary: #F0F6FC;
+            --text-secondary: #8B949E;
+            --accent-pink: #EC4899;
+            --accent-purple: #A855F7;
+            --accent-rose: #F43F5E;
+        }
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.2);
+        }
+        
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        
+        .module-tab {
+            transition: all 0.3s ease;
+        }
+        
+        .module-tab.active {
+            background: var(--bg-card);
+            border-bottom: 3px solid var(--accent-pink);
+        }
+        
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .comfort-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+        
+        .comfort-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);
+        }
+        
+        .large-text {
+            font-size: 1.125rem;
+            line-height: 1.75;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent-pink);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .testimonial-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 24px;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 60px;
+            color: var(--accent-pink);
+            opacity: 0.2;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-opacity-90" style="background-color: rgba(13, 17, 23, 0.9);">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white"></i>
+                    </div>
+                    <span class="text-2xl font-bold gradient-text">Upskilld</span>
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-pink-400 transition">Home</a>
+                <a href="#modules" class="hover:text-pink-400 transition">Learning Modules</a>
+                <a href="#approach" class="hover:text-pink-400 transition">Our Approach</a>
+                <a href="#stories" class="hover:text-pink-400 transition">Success Stories</a>
+                <a href="#support" class="hover:text-pink-400 transition">Support</a>
+            </div>
+            <button class="md:hidden text-white">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 py-16 md:py-24">
+        <div class="text-center max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <span class="gradient-text">It's Never Too Late to Learn Digital Skills</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 large-text">
+                Join plenty of other seniors discovering the joy of technology. Learn at your pace with patient instructors and a supportive community.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a href="https://wa.me/+917778010753?text=Interested%20to%20learn%20Tech!" target="_blank"><button class="gradient-bg text-white px-8 py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition">
+                    <i class="fas fa-phone mr-2"></i> Schedule a Free Demo
+                </button></a>
+                <a href="https://wa.me/+917778010753?text=Enquiry%20to%20learn%20Tech!" target="_blank"><button class="bg-transparent border-2 border-pink-500 text-pink-400 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-pink-500 hover:text-white transition">
+                    <i class="fas fa-users mr-2"></i> Join Now !
+                </button></a>
+            </div>
+            
+            <!-- Trust Indicators -->
+            <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+                <span class="bg-pink-900 bg-opacity-30 px-4 py-2 rounded-full">
+                    <i class="fas fa-heart mr-2 text-pink-400"></i> 50+ Happy Seniors
+                </span>
+                <span class="bg-purple-900 bg-opacity-30 px-4 py-2 rounded-full">
+                    <i class="fas fa-user-friends mr-2 text-purple-400"></i> Patient Instructors
+                </span>
+                <span class="bg-rose-900 bg-opacity-30 px-4 py-2 rounded-full">
+                    <i class="fas fa-clock mr-2 text-rose-400"></i> Learn at Your Pace
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Modules -->
+    <section id="modules" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">What Would You Like to Learn?</span>
+        </h2>
+        <div class="flex flex-col md:flex-row justify-center mb-8">
+            <button class="module-tab active px-6 py-3 text-center" data-module="basics">Computer Basics</button>
+            <button class="module-tab px-6 py-3 text-center" data-module="smartphone">Smartphone Skills</button>
+            <button class="module-tab px-6 py-3 text-center" data-module="internet">Internet & Safety</button>
+            <button class="module-tab px-6 py-3 text-center" data-module="ai">AI for Daily Life</button>
+        </div>
+        
+        <!-- Computer Basics Content -->
+        <div id="basics" class="module-content">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-pink-900 to-purple-900 bg-opacity-20 rounded-xl p-6 border border-pink-800">
+                    <div class="skill-icon bg-pink-500 bg-opacity-20">
+                        <i class="fas fa-desktop text-pink-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Getting Started</h3>
+                    <p class="text-gray-300 mb-4 large-text">Learn the basics of using a computer comfortably</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Mouse & keyboard practice</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Understanding the desktop</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Opening & closing programs</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-purple-900 to-pink-900 bg-opacity-20 rounded-xl p-6 border border-purple-800">
+                    <div class="skill-icon bg-purple-500 bg-opacity-20">
+                        <i class="fas fa-folder text-purple-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">File Management</h3>
+                    <p class="text-gray-300 mb-4 large-text">Organize your photos, documents, and files</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Creating folders</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Saving & finding files</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> USB drives & storage</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-rose-900 to-pink-900 bg-opacity-20 rounded-xl p-6 border border-rose-800">
+                    <div class="skill-icon bg-rose-500 bg-opacity-20">
+                        <i class="fas fa-keyboard text-rose-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Typing & Email</h3>
+                    <p class="text-gray-300 mb-4 large-text">Type comfortably and stay connected</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Basic typing skills</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Sending emails</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Attachments & photos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Smartphone Skills Content (Hidden) -->
+        <div id="smartphone" class="module-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-blue-900 to-cyan-900 bg-opacity-20 rounded-xl p-6 border border-blue-800">
+                    <div class="skill-icon bg-blue-500 bg-opacity-20">
+                        <i class="fas fa-mobile-alt text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Phone Basics</h3>
+                    <p class="text-gray-300 mb-4 large-text">Master your smartphone with confidence</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Touch & gestures</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Installing apps</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Phone settings</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-cyan-900 to-blue-900 bg-opacity-20 rounded-xl p-6 border border-cyan-800">
+                    <div class="skill-icon bg-cyan-500 bg-opacity-20">
+                        <i class="fas fa-camera text-cyan-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Photos & Videos</h3>
+                    <p class="text-gray-300 mb-4 large-text">Capture and share precious memories</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Taking photos</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Video calls with family</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Sharing on WhatsApp</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-indigo-900 to-blue-900 bg-opacity-20 rounded-xl p-6 border border-indigo-800">
+                    <div class="skill-icon bg-indigo-500 bg-opacity-20">
+                        <i class="fas fa-map-marked-alt text-indigo-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Useful Apps</h3>
+                    <p class="text-gray-300 mb-4 large-text">Apps that make life easier</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Banking apps</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Grocery delivery</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Health tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Internet & Safety Content (Hidden) -->
+        <div id="internet" class="module-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-green-900 to-teal-900 bg-opacity-20 rounded-xl p-6 border border-green-800">
+                    <div class="skill-icon bg-green-500 bg-opacity-20">
+                        <i class="fas fa-globe text-green-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Internet Basics</h3>
+                    <p class="text-gray-300 mb-4 large-text">Explore the online world safely</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Using web browsers</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Searching online</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Bookmarks & favorites</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-teal-900 to-green-900 bg-opacity-20 rounded-xl p-6 border border-teal-800">
+                    <div class="skill-icon bg-teal-500 bg-opacity-20">
+                        <i class="fas fa-shield-alt text-teal-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Online Safety</h3>
+                    <p class="text-gray-300 mb-4 large-text">Stay safe while browsing</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Strong passwords</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Avoiding scams</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Privacy settings</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-emerald-900 to-green-900 bg-opacity-20 rounded-xl p-6 border border-emerald-800">
+                    <div class="skill-icon bg-emerald-500 bg-opacity-20">
+                        <i class="fas fa-shopping-cart text-emerald-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Online Shopping</h3>
+                    <p class="text-gray-300 mb-4 large-text">Shop from home conveniently</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Finding products</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Secure payments</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Tracking orders</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AI for Daily Life Content (Hidden) -->
+        <div id="ai" class="module-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-gradient-to-br from-yellow-900 to-orange-900 bg-opacity-20 rounded-xl p-6 border border-yellow-800">
+                    <div class="skill-icon bg-yellow-500 bg-opacity-20">
+                        <i class="fas fa-microphone text-yellow-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Voice Assistants</h3>
+                    <p class="text-gray-300 mb-4 large-text">Talk to your devices</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> "Hey Google" & "Siri"</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Setting reminders</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Weather & news</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-orange-900 to-yellow-900 bg-opacity-20 rounded-xl p-6 border border-orange-800">
+                    <div class="skill-icon bg-orange-500 bg-opacity-20">
+                        <i class="fas fa-language text-orange-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Translation Tools</h3>
+                    <p class="text-gray-300 mb-4 large-text">Break language barriers</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Real-time translation</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Camera translation</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Voice translation</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-amber-900 to-yellow-900 bg-opacity-20 rounded-xl p-6 border border-amber-800">
+                    <div class="skill-icon bg-amber-500 bg-opacity-20">
+                        <i class="fas fa-heartbeat text-amber-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Health AI</h3>
+                    <p class="text-gray-300 mb-4 large-text">AI for better health</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Medication reminders</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Health tracking</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Emergency contacts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section id="approach" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Learning Made Comfortable for You</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="comfort-card flex items-start">
+                <div class="step-number mr-4">1</div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2 text-pink-400">Patient & Friendly Instructors</h3>
+                    <p class="text-gray-400 large-text">Our teachers understand your needs and go at your pace. No rushing, no judgment.</p>
+                </div>
+            </div>
+            
+            <div class="comfort-card flex items-start">
+                <div class="step-number mr-4">2</div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2 text-purple-400">Small Group Classes</h3>
+                    <p class="text-gray-400 large-text">Learn with 5-10 fellow seniors. Make friends while learning new skills.</p>
+                </div>
+            </div>
+            
+            <div class="comfort-card flex items-start">
+                <div class="step-number mr-4">3</div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2 text-rose-400">Practice & Revision</h3>
+                    <p class="text-gray-400 large-text">Repeat lessons as many times as you need. Practice makes perfect!</p>
+                </div>
+            </div>
+            
+            <div class="comfort-card flex items-start">
+                <div class="step-number mr-4">4</div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2 text-pink-400">Phone Support Available</h3>
+                    <p class="text-gray-400 large-text">Stuck? Call us anytime. We're here to help you succeed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section id="stories" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Inspiring Stories from Our Students</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="testimonial-card">
+                <p class="text-gray-300 mb-4 relative z-10 large-text">At 72, I thought technology was not for me. But Upskilld changed everything! Now I video call my grandchildren abroad and even order groceries online. It's opened a whole new world for me.</p>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/seed/senior1/60/60.jpg" alt="Senior" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold">Mrs. Meera Rao</h4>
+                        <p class="text-sm text-gray-400">72 years, Retired Teacher</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="text-gray-300 mb-4 relative z-10 large-text">The patience of the instructors is amazing. They never make you feel silly for asking questions. I've learned to use WhatsApp, pay bills online, and even edit photos on my phone!</p>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/seed/senior2/60/60.jpg" alt="Senior" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold">Mr. Rajesh Gupta</h4>
+                        <p class="text-sm text-gray-400">68 years, Retired Banker</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">We're Here to Help You Every Step</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-card rounded-lg p-6 text-center">
+                <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-headset text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">24/7 Helpline</h3>
+                <p class="text-gray-400">Call us anytime for help with your lessons</p>
+            </div>
+            
+            <div class="bg-card rounded-lg p-6 text-center">
+                <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-home text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Home Visits</h3>
+                <p class="text-gray-400">We can visit you at home for extra help</p>
+            </div>
+            
+            <div class="bg-card rounded-lg p-6 text-center">
+                <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-users text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Community Meetups</h3>
+                <p class="text-gray-400">Monthly gatherings to practice and socialize</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">Simple & Affordable Pricing</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-5xl mx-auto">
+            <!-- <div class="bg-card rounded-xl p-6 border border-gray-700">
+                <h3 class="text-xl font-bold mb-2">Basic</h3>
+                <p class="text-gray-400 mb-4">Perfect for getting started</p>
+                <div class="text-3xl font-bold mb-4">₹999<span class="text-sm text-gray-400">/month</span></div>
+                <ul class="space-y-2 mb-6 text-gray-300">
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> 2 group classes/week</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Basic computer skills</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Email support</li>
+                </ul>
+                <button class="w-full bg-transparent border-2 border-pink-500 text-pink-400 py-2 rounded-lg hover:bg-pink-500 hover:text-white transition">
+                    Start Learning
+                </button>
+            </div> -->
+            
+            <div class="bg-card rounded-xl p-20 border-2 border-pink-500 relative mx-auto overflow-hidden">
+    <!-- Discount Badge -->
+    <div class="absolute top-9 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold z-10 animate-pulse">
+        LIMITED TIME OFFER
+    </div>
+    
+    <div class="absolute -top-0 left-1/2 transform -translate-x-1/2 bg-pink-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+        MOST POPULAR
+    </div>
+    
+    <h3 class="text-xl font-bold mb-2 top-9">Complete</h3>
+    <p class="text-gray-400 mb-4">All modules included</p>
+    
+    <!-- Pricing with Discount -->
+    <div class="text-center mb-4">
+        <div class="flex items-center justify-center gap-2">
+            <span class="text-2xl text-gray-500 line-through">₹5,999</span>
+            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded">SAVE ₹1,000</span>
+        </div>
+        <div class="text-3xl font-bold gradient-text">₹4,999<span class="text-sm text-gray-400">/month</span></div>
+    </div>
+    
+    <!-- Urgency Message -->
+    <div class="bg-red-900 bg-opacity-20 border border-red-500 rounded-lg p-2 mb-4 text-center">
+        <p class="text-red-400 text-sm font-semibold">
+            <i class="fas fa-clock mr-1"></i> Discount ends in: <span id="discount-timer-complete">24:00:00</span>
+        </p>
+    </div>
+    
+    <ul class="space-y-2 mb-6 text-gray-300">
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Unlimited group classes</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> All learning modules</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Phone support</li>
+        <li><i class="fas fa-check text-green-400 mr-2"></i> Community access</li>
+    </ul>
+    
+    <a href="https://wa.me/+917778010753?text=Avail%20discount%20to%20learn%20Tech!" target="_blank"><button class="w-full gradient-bg text-white py-2 rounded-lg hover:opacity-90 transition font-semibold">
+        <i class="fas fa-bolt mr-2"></i> Grab Discount Now
+    </button></a>
+    
+    <!-- Additional Urgency Text -->
+    <p class="text-center text-xs text-gray-400 mt-3">
+        <i class="fas fa-fire text-orange-400 mr-1"></i> Only 15 spots left at this price!
+    </p>
+</div>
+            
+            <!-- <div class="bg-card rounded-xl p-6 border border-gray-700">
+                <h3 class="text-xl font-bold mb-2">1-on-1</h3>
+                <p class="text-gray-400 mb-4">Personal attention</p>
+                <div class="text-3xl font-bold mb-4">₹3,999<span class="text-sm text-gray-400">/month</span></div>
+                <ul class="space-y-2 mb-6 text-gray-300">
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Personal instructor</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Custom learning pace</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Home visits available</li>
+                    <li><i class="fas fa-check text-green-400 mr-2"></i> Priority support</li>
+                </ul>
+                <button class="w-full bg-transparent border-2 border-pink-500 text-pink-400 py-2 rounded-lg hover:bg-pink-500 hover:text-white transition">
+                    Start Learning
+                </button>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="container mx-auto px-4 py-16 section-fade-in">
+        <div class="bg-gradient-to-r from-pink-900 to-purple-900 rounded-2xl p-8 md:p-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                Ready to Begin Your Digital Journey?
+            </h2>
+            <p class="text-xl mb-8 text-gray-300 large-text">Take the first step towards digital independence. We're here to guide you.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:+917778010753" target="_blank"><button class="bg-white text-pink-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
+                    <i class="fas fa-phone mr-2"></i> Call Us Now
+                </button></a>
+                <a href="https://wa.me/+917778010753?text=Enquiry%20to%20learn%20Tech!" target="_blank"><button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-pink-900 transition">
+                    <i class="fas fa-calendar mr-2"></i> Book Free Demo
+                </button></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-card mt-16 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white"></i>
+                        </div>
+                        <span class="text-2xl font-bold gradient-text">Upskilld</span>
+                    </div>
+                    <p class="text-gray-400">Making technology accessible for everyone.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#modules" class="hover:text-pink-400 transition">Learning Modules</a></li>
+                        <li><a href="#approach" class="hover:text-pink-400 transition">Our Approach</a></li>
+                        <li><a href="#stories" class="hover:text-pink-400 transition">Success Stories</a></li>
+                        <li><a href="#support" class="hover:text-pink-400 transition">Support</a></li>
+                    </ul>
+                </div>
+                <!-- <div>
+                    <h4 class="font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-pink-400 transition">Practice Exercises</a></li>
+                        <li><a href="#" class="hover:text-pink-400 transition">Video Tutorials</a></li>
+                        <li><a href="#" class="hover:text-pink-400 transition">FAQs</a></li>
+                        <li><a href="#" class="hover:text-pink-400 transition">Contact</a></li>
+                    </ul>
+                </div> -->
+                <div>
+                    <h4 class="font-bold mb-4">Get in Touch</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="tel:+917778010753" target="_blank"><i class="fas fa-phone mr-2"></i> +917778010753</a></li>
+                        <!-- <li><i class="fas fa-envelope mr-2"></i> seniors@ed-sphere.com</li> -->
+                        <li><i class="fas fa-clock mr-2"></i> Mon-Sat: 9AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>© 2025 Upskilld. All rights reserved.</p>
+                <p class="mt-2">Made with ❤️ for our respected senior citizens.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Module switching
+        document.querySelectorAll('.module-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.module-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                document.querySelectorAll('.module-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                document.getElementById(this.dataset.module).classList.remove('hidden');
+            });
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.section-fade-in').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
