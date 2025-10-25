@@ -88,6 +88,32 @@
             transform: scale(1.05);
             box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
         }
+        
+        /* Mobile menu styles */
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .hamburger-line {
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .hamburger.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -102,6 +128,7 @@
                     <span class="text-2xl font-bold gradient-text">Upskilld</span>
                 </a>
             </div>
+            <!-- Desktop Navigation -->
             <div class="hidden md:flex space-x-8">
                 <a href="index.html" class="hover:text-blue-400 transition">Home</a>
                 <a href="#tracks" class="hover:text-blue-400 transition">Tracks</a>
@@ -109,11 +136,46 @@
                 <a href="#success" class="hover:text-blue-400 transition">Placements</a>
                 <a href="#pricing" class="hover:text-blue-400 transition">Pricing</a>
             </div>
-            <button class="md:hidden text-white">
-                <i class="fas fa-bars text-xl"></i>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white hamburger">
+                <div class="w-6 h-0.5 bg-white mb-1 hamburger-line"></div>
+                <div class="w-6 h-0.5 bg-white mb-1 hamburger-line"></div>
+                <div class="w-6 h-0.5 bg-white hamburger-line"></div>
             </button>
         </div>
     </nav>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed top-0 left-0 w-64 h-full bg-gray-900 z-40 md:hidden">
+        <div class="p-4">
+            <div class="flex items-center justify-between mb-8">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold gradient-text">Upskilld</span>
+                </div>
+                <button id="close-mobile-menu" class="text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="block py-2 hover:text-blue-400 transition mobile-nav-link">Home</a>
+                <a href="#tracks" class="block py-2 hover:text-blue-400 transition mobile-nav-link">Tracks</a>
+                <a href="#curriculum" class="block py-2 hover:text-blue-400 transition mobile-nav-link">Curriculum</a>
+                <a href="#success" class="block py-2 hover:text-blue-400 transition mobile-nav-link">Placements</a>
+                <a href="#pricing" class="block py-2 hover:text-blue-400 transition mobile-nav-link">Pricing</a>
+                <div class="pt-4 mt-4 border-t border-gray-700">
+                    <a href="https://wa.me/+917778010753?text=Interested%20for%20my%20Tech%20career!" target="_blank" class="block py-2 bg-green-500 text-white rounded-lg text-center hover:bg-green-600 transition">
+                        <i class="fab fa-whatsapp mr-2"></i> Talk to Mentor
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay for mobile menu -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden md:hidden"></div>
 
     <!-- Hero Section -->
     <section class="container mx-auto px-4 py-16 md:py-24">
@@ -397,49 +459,6 @@
         </div>
     </section>
 
-    <!-- Placement Stats -->
-    <!-- <section id="placements" class="container mx-auto px-4 py-16 section-fade-in">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
-            <span class="gradient-text">Placement Success</span>
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-            <div class="stat-card">
-                <div class="text-4xl font-bold gradient-text mb-2">₹25 LPA</div>
-                <p class="text-gray-400">Average Package</p>
-            </div>
-            <div class="stat-card">
-                <div class="text-4xl font-bold gradient-text mb-2">1000+</div>
-                <p class="text-gray-400">Students Placed</p>
-            </div>
-            <div class="stat-card">
-                <div class="text-4xl font-bold gradient-text mb-2">92%</div>
-                <p class="text-gray-400">Placement Rate</p>
-            </div>
-            <div class="stat-card">
-                <div class="text-4xl font-bold gradient-text mb-2">150+</div>
-                <p class="text-gray-400">Hiring Partners</p>
-            </div>
-        </div>
-        
-        <div class="flex flex-wrap justify-center gap-8">
-            <div class="w-32 h-16 bg-gray-800 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition">
-                <span class="text-gray-400 font-bold">Amazon</span>
-            </div>
-            <div class="w-32 h-16 bg-gray-800 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition">
-                <span class="text-gray-400 font-bold">Microsoft</span>
-            </div>
-            <div class="w-32 h-16 bg-gray-800 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition">
-                <span class="text-gray-400 font-bold">Google</span>
-            </div>
-            <div class="w-32 h-16 bg-gray-800 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition">
-                <span class="text-gray-400 font-bold">Meta</span>
-            </div>
-            <div class="w-32 h-16 bg-gray-800 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition">
-                <span class="text-gray-400 font-bold">Netflix</span>
-            </div>
-        </div>
-    </section> -->
-
     <!-- Student Success Stories -->
     <section id = "success" class="container mx-auto px-4 py-16 section-fade-in">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
@@ -476,20 +495,6 @@
             <span class="gradient-text">Choose Your Plan</span>
         </h2>
          <div class="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-5xl mx-auto">
-            <!-- <div class="bg-card rounded-xl p-6 border border-gray-700">
-                <h3 class="text-xl font-bold mb-2">Basic</h3>
-                <p class="text-gray-400 mb-4">Self-paced learning</p>
-                <div class="text-3xl font-bold mb-4">₹9,999<span class="text-sm text-gray-400">/month</span></div>
-                <ul class="space-y-2 mb-6 text-gray-300">
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Access to all courses</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> 500+ coding problems</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Community support</li>
-                </ul>
-                <button class="w-full bg-transparent border-2 border-blue-500 text-blue-400 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition">
-                    Start Learning
-                </button>
-            </div> -->
-            
             <div class="bg-card rounded-xl p-6 border-2 border-blue-500 relative mx-auto overflow-hidden">
     <!-- Discount Badge -->
     <div class="absolute top-7 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold z-10 animate-pulse">
@@ -536,22 +541,6 @@
         <i class="fas fa-fire text-orange-400 mr-1"></i> Only 7 spots left at this price!
     </p>
 </div>
-            
-            <!-- <div class="bg-card rounded-xl p-6 border border-gray-700">
-                <h3 class="text-xl font-bold mb-2">Premium</h3>
-                <p class="text-gray-400 mb-4">Job guarantee program</p>
-                <div class="text-3xl font-bold mb-4">₹39,999<span class="text-sm text-gray-400">/month</span></div>
-                <ul class="space-y-2 mb-6 text-gray-300">
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Everything in Pro</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Personal mentor (2:1 ratio)</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Job guarantee or refund</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Premium placement support</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Alumni network access</li>
-                </ul>
-                <button class="w-full bg-transparent border-2 border-blue-500 text-blue-400 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition">
-                    Start Learning
-                </button>
-            </div> -->
         </div>
     </section>
 
@@ -595,15 +584,6 @@
                         <li><a href="#pricing" class="hover:text-blue-400 transition">Pricing</a></li>
                     </ul>
                 </div>
-                <!-- <div>
-                    <h4 class="font-bold mb-4">Resources</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-blue-400 transition">Blog</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition">Events</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition">FAQs</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition">Contact</a></li>
-                    </ul>
-                </div> -->
                 <div class="mx-auto">
                     <h4 class="font-bold mb-4">Follow Us</h4>
                     <div class="flex space-x-4">
@@ -627,6 +607,38 @@
     </footer>
 
     <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenu = document.getElementById('close-mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            mobileMenuOverlay.classList.remove('hidden');
+            mobileMenuButton.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        }
+        
+        function closeMobileMenuFunc() {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.add('hidden');
+            mobileMenuButton.classList.remove('active');
+            document.body.style.overflow = ''; // Enable scrolling again
+        }
+        
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenuFunc);
+        
+        // Close mobile menu when clicking on a link
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenuFunc();
+            });
+        });
+        
         // Track switching
         document.querySelectorAll('.track-tab').forEach(tab => {
             tab.addEventListener('click', function() {
@@ -659,6 +671,52 @@
         document.querySelectorAll('.section-fade-in').forEach(section => {
             observer.observe(section);
         });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Countdown Timer for Pro Discount
+        function startProDiscountTimer() {
+            // Set the discount end time (24 hours from now)
+            const endTime = new Date();
+            endTime.setHours(endTime.getHours() + 24);
+            
+            // Update the countdown every 1 second
+            const timerInterval = setInterval(function() {
+                // Get current time
+                const now = new Date().getTime();
+                
+                // Calculate remaining time
+                const distance = endTime - now;
+                
+                // Time calculations
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                // Display the result
+                document.getElementById("discount-timer-pro").innerHTML = 
+                    hours.toString().padStart(2, '0') + ":" + 
+                    minutes.toString().padStart(2, '0') + ":" + 
+                    seconds.toString().padStart(2, '0');
+                
+                // If the countdown is finished, reset it
+                if (distance < 0) {
+                    clearInterval(timerInterval);
+                    document.getElementById("discount-timer-pro").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+        }
+
+        // Start the timer when the page loads
+        window.onload = startProDiscountTimer;
     </script>
 </body>
 </html>
