@@ -739,40 +739,40 @@
             });
         });
         
-        // Countdown Timer
-        function updateCountdown() {
-            // Set the date we're counting down to (15 days from now)
-            const countDownDate = new Date();
-            countDownDate.setDate(countDownDate.getDate() + 15);
+        // // Countdown Timer
+        // function updateCountdown() {
+        //     // Set the date we're counting down to (15 days from now)
+        //     const countDownDate = new Date();
+        //     countDownDate.setDate(countDownDate.getDate() + 15);
             
-            // Update the countdown every 1 second
-            const x = setInterval(function() {
-                // Get today's date and time
-                const now = new Date().getTime();
+        //     // Update the countdown every 1 second
+        //     const x = setInterval(function() {
+        //         // Get today's date and time
+        //         const now = new Date().getTime();
                 
-                // Find the distance between now and the count down date
-                const distance = countDownDate - now;
+        //         // Find the distance between now and the count down date
+        //         const distance = countDownDate - now;
                 
-                // Time calculations for days, hours, minutes and seconds
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        //         // Time calculations for days, hours, minutes and seconds
+        //         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        //         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        //         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        //         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
                 
-                // Display the result in the elements
-                document.getElementById("days").innerHTML = days;
-                document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
-                document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-                document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+        //         // Display the result in the elements
+        //         document.getElementById("days").innerHTML = days;
+        //         document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+        //         document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+        //         document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
                 
-                // If the count down is finished, reset it to 15 days again
-                if (distance < 0) {
-                    clearInterval(x);
-                    countDownDate.setDate(countDownDate.getDate() + 15);
-                    updateCountdown();
-                }
-            }, 1000);
-        }
+        //         // If the count down is finished, reset it to 15 days again
+        //         if (distance < 0) {
+        //             clearInterval(x);
+        //             countDownDate.setDate(countDownDate.getDate() + 15);
+        //             updateCountdown();
+        //         }
+        //     }, 1000);
+        // }
         
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(item => {
@@ -820,7 +820,7 @@
         });
         
         // Initialize countdown
-        updateCountdown();
+        // updateCountdown();
     </script>
 </body>
 </html>

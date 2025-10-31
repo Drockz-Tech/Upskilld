@@ -753,41 +753,41 @@
             });
         });
 
-        // Countdown Timer for Discount
-        function startDiscountTimer() {
-            // Set the discount end time (24 hours from now)
-            const endTime = new Date();
-            endTime.setHours(endTime.getHours() + 24);
+        // // Countdown Timer for Discount
+        // function startDiscountTimer() {
+        //     // Set the discount end time (24 hours from now)
+        //     const endTime = new Date();
+        //     endTime.setHours(endTime.getHours() + 24);
             
             // Update the countdown every 1 second
-            const timerInterval = setInterval(function() {
-                // Get current time
-                const now = new Date().getTime();
+        //     const timerInterval = setInterval(function() {
+        //         // Get current time
+        //         const now = new Date().getTime();
                 
-                // Calculate remaining time
-                const distance = endTime - now;
+        //         // Calculate remaining time
+        //         const distance = endTime - now;
                 
-                // Time calculations
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        //         // Time calculations
+        //         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        //         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        //         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
                 
-                // Display the result
-                document.getElementById("discount-timer").innerHTML = 
-                    hours.toString().padStart(2, '0') + ":" + 
-                    minutes.toString().padStart(2, '0') + ":" + 
-                    seconds.toString().padStart(2, '0');
+        //         // Display the result
+        //         document.getElementById("discount-timer").innerHTML = 
+        //             hours.toString().padStart(2, '0') + ":" + 
+        //             minutes.toString().padStart(2, '0') + ":" + 
+        //             seconds.toString().padStart(2, '0');
                 
-                // If the countdown is finished, reset it
-                if (distance < 0) {
-                    clearInterval(timerInterval);
-                    document.getElementById("discount-timer").innerHTML = "EXPIRED";
-                }
-            }, 1000);
-        }
+        //         // If the countdown is finished, reset it
+        //         if (distance < 0) {
+        //             clearInterval(timerInterval);
+        //             document.getElementById("discount-timer").innerHTML = "EXPIRED";
+        //         }
+        //     }, 1000);
+        // }
 
         // Start the timer when the page loads
-        window.onload = startDiscountTimer;
+        // window.onload = startDiscountTimer;
     </script>
 </body>
 </html>
